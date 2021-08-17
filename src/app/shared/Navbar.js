@@ -89,14 +89,16 @@ const Navbar =  () => {
                     <Form.Control type="text" className="form-control" id="exampleInputDescription" placeholder="Description" />
                     </div>
                   </Form.Group>
+                  <div className="template-demo">
                   <button type="submit" className="btn btn-primary btn-icon-text">
                         <i className="mdi mdi-file-check btn-icon-prepend"></i>
                         Submit
                   </button>
                   <button type="button" className="btn btn-dark btn-icon-text"  onClick={handleMenuClose}>
                         <i className="mdi mdi-close btn-icon-prepend"></i>                                                    
-                        Upload
+                        Close
                   </button>
+                  </div>
                 </form>
               </div>
             </div>
