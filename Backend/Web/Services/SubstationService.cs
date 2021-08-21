@@ -22,7 +22,7 @@ namespace Web.Services
             _mapper = mapper;
         }
 
-        public async Task<bool> CreateNewSubstation(SubstationDTO substation)
+        public async Task<bool> CreateNewSubstation(SubstationRequest substation)
         {
             if (Validation(substation))
             {
@@ -77,21 +77,21 @@ namespace Web.Services
             return false;
         }
 
-        public async Task<IEnumerable<SubstationDTO>> GetAllSubstations()
+        public async Task<IEnumerable<SubstationResponse>> GetAllSubstations()
         {
             var list=await _unitOfWork.Substations.GetAll();
-            var newList = _mapper.Map<List<SubstationDTO>>(list);
+            var newList = _mapper.Map<List<SubstationResponse>>(list);
             return newList;
         }
 
-        public async Task<SubstationDTO> GetSubstationById(int id)
+        public async Task<SubstationResponse> GetSubstationById(int id)
         {
             if (id > 0)
             {
                 var substation = await _unitOfWork.Substations.Get(id);
                 if (substation != null)
                 {
-                    var newSubstation= _mapper.Map<SubstationDTO>(substation);
+                    var newSubstation= _mapper.Map<SubstationResponse>(substation);
                     return newSubstation;
                 }
                 else
@@ -104,7 +104,7 @@ namespace Web.Services
             return null;
         }
 
-        public async Task<bool> UpdateSubstation(int id, SubstationDTO substation)
+        public async Task<bool> UpdateSubstation(int id, SubstationRequest substation)
         {
             if (id > 0 && Validation(substation))
             {
@@ -133,7 +133,7 @@ namespace Web.Services
                 throw new ValidationException();
             }
         }
-        private bool Validation(SubstationDTO substationDTO)
+        private bool Validation(SubstationRequest substationDTO)
         {
             if (substationDTO == null) return false;
             if (substationDTO.Id < 0) return false;

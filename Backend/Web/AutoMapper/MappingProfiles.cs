@@ -12,7 +12,8 @@ namespace Web.AutoMapper
     {
         public MappingProfiles()
         {
-            CreateMap<Substation, SubstationDTO>().ReverseMap();
+            CreateMap<Substation, SubstationRequest>().ReverseMap();
+            CreateMap<Substation, SubstationResponse>().ReverseMap();
         }
     }
 }

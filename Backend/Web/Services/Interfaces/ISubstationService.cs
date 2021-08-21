@@ -9,10 +9,10 @@ namespace Web.Services.Interfaces
 {
     public interface ISubstationService
     {
-        Task<bool> CreateNewSubstation(SubstationDTO substation);
-        Task<IEnumerable<SubstationDTO>> GetAllSubstations();
-        Task<SubstationDTO> GetSubstationById(int id);
-        Task<bool> UpdateSubstation(int id, SubstationDTO substation);
+        Task<bool> CreateNewSubstation(SubstationRequest substation);
+        Task<IEnumerable<SubstationResponse>> GetAllSubstations();
+        Task<SubstationResponse> GetSubstationById(int id);
+        Task<bool> UpdateSubstation(int id, SubstationRequest substation);
         Task<bool> Delete(int id);
     }
 }

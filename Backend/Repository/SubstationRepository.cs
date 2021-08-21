@@ -1,10 +1,12 @@
 ﻿using Context;
 using Domain.Core;
 using Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Repository
 {
@@ -18,5 +20,6 @@ namespace Repository
         {
             return _context.Substations.Any(s => s.Mrid == mrid || s.Name==name);
         }
+
     }
 }

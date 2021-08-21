@@ -10,10 +10,23 @@ namespace Repository
     {
         private readonly AppDbContext _context;
         public ISubstationRepository Substations { get; }
-        public UnitOfWork(AppDbContext context, ISubstationRepository substationRepository) 
+
+        public IDisconnectorRepository Disconnector { get; }
+
+        public IFuseRepository Fuse { get; }
+
+        public IBreakerRepository Breaker { get; }
+
+        public ILoadBreakSwitchRepository LoadBreakSwitchRepository { get; }
+
+        public UnitOfWork(AppDbContext context, ISubstationRepository substationRepository, IDisconnectorRepository disconnectorRepository, IFuseRepository fuseRepository, ILoadBreakSwitchRepository loadBreakSwitchRepository, IBreakerRepository breakerRepository) 
         {
             _context = context;
             Substations = substationRepository;
+            Disconnector = disconnectorRepository;
+            Fuse = fuseRepository;
+            Breaker = breakerRepository;
+            LoadBreakSwitchRepository = loadBreakSwitchRepository;
         }
         public int Complete()
         {

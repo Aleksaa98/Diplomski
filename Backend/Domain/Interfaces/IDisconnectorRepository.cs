@@ -1,12 +1,11 @@
-﻿using Domain.Core;
+﻿using Domain.Wires;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Interfaces
 {
-    public interface ISubstationRepository:IGenericRepository<Substation>
+    public interface IDisconnectorRepository : IGenericRepository<Disconnector>
     {
         bool GetByMridAndName(string mrid, string name);
     }

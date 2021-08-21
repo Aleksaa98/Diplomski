@@ -39,7 +39,7 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(SubstationDTO substation)
+        public async Task<IActionResult> Add(SubstationRequest substation)
         {
             var substationCreated = await _service.CreateNewSubstation(substation);
             if (substationCreated)
@@ -50,7 +50,7 @@ namespace Web.Controllers
 
         [HttpPut]
         [Route("{id}")]
-        public async Task<IActionResult> Update(int id, SubstationDTO substation)
+        public async Task<IActionResult> Update(int id, SubstationRequest substation)
         {
             var sub = await _service.UpdateSubstation(id, substation);
             if (sub)
