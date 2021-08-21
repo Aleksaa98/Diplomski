@@ -26,8 +26,8 @@ class Sidebar extends Component {
       }
   }));
   this.toggleMenuState('novo')
-  console.log(this.props.subtations)
   }
+
 
   toggleMenuState(menuState) {
     if (this.state[menuState]) {
@@ -115,21 +115,24 @@ class Sidebar extends Component {
             </Link>
           </li>
           {this.props.subtations.map((sub,index)=> 
-							 <li className={ this.isPathActive('/substation') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
+							 <li className= 'nav-item menu-items' >
+                
                <div className={ this.props.subtations[index].state ? 'nav-link menu-expanded' : 'nav-link' } onClick={ () => this.updateState(sub.name) } data-toggle="collapse">
+               <Link className="nav-link"  to={{ pathname : `/substation/substation/${sub.id}`}}>
                  <span className="menu-icon">
                    <i className="mdi mdi-houzz-box"></i>
                  </span>
-                 <Link className="nav-link"  to="/dashboard">
+                 
                  <span ><Trans>{sub.name}</Trans></span>
-                 </Link>
+                 
                  <i className="menu-arrow"></i>
+                </Link>
                </div>
                
                <Collapse in={ this.props.subtations[index].state }>
                  <div>
                    <ul className="nav flex-column sub-menu">
-                   <li className="nav-item"> <Link className={ this.isPathActive('/substation/nzm') ? 'nav-link active' : 'nav-link' } to="/substation/nzm">
+                   <li className="nav-item"> <Link className={ this.isPathActive('/dashboard') ? 'nav-link active' : 'nav-link' } to="/dashboard">
                    <span className="menu-icon"><i className="mdi mdi-flash-off"></i></span><Trans>Disconnector</Trans></Link></li>
                   <li className="nav-item"> <Link className={ this.isPathActive('/substation/nzm') ? 'nav-link active' : 'nav-link' } to="/substation/nzm">
                    <span className="menu-icon"><i className="mdi mdi-image-broken-variant"></i></span><Trans>Fuse</Trans></Link></li>

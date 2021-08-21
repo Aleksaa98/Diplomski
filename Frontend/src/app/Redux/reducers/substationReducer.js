@@ -2,9 +2,9 @@ import { ActionTypes } from "../constants/actions-types";
 
 const initialState = {
     substations: [
-        {name:'prvi',description:'prvi sub',mrId:'asd',state:false},
-        {name:'drugi',description:'drugi sub',mrId:'dsa',state:false},
-        {name:'treci',description:'treci sub',mrId:'sda',state:false}
+        {id:1,name:'prvi',description:'prvi sub',mrId:'asd',dissCount:15,fuseCount:32,switchBreakCount:12,breakerCount:22,state:false},
+        {id:2,name:'drugi',description:'drugi sub',mrId:'dsa',dissCount:23,fuseCount:13,switchBreakCount:42,breakerCount:52,state:false},
+        {id:3,name:'treci',description:'treci sub',mrId:'sda',dissCount:123,fuseCount:23,switchBreakCount:51,breakerCount:76,state:false}
     ],
 }
 
