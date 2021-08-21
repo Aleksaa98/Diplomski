@@ -293,13 +293,13 @@
                 width: 5px;
                 height: 5px;
                 border-radius: 50%;
-                background-color: $sidebar-submenu-color;
+                background-color: $sidebar-submenu-color !important;
                 position: absolute;
                 left: 0;
             }
             &:hover {
               &:before {
-                background-color: white;
+                background-color: white !important;
               }
             }
             }
@@ -485,7 +485,7 @@
       box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     }
     &::-webkit-scrollbar-thumb {
-      background-color: darkgrey;
+      background-color: darkgrey !important;
       outline: 1px solid slategrey;
     }
   }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import './App.scss';
 import AppRoutes from './AppRoutes';
@@ -6,12 +6,16 @@ import Navbar from './shared/Navbar';
 import Sidebar from './shared/Sidebar';
 import Footer from './shared/Footer';
 import { withTranslation } from "react-i18next";
+import { useDispatch,useSelector, connect } from "react-redux";
+
 
 class App extends Component {
   state = {}
+
   componentDidMount() {
     this.onRouteChanged();
   }
+ 
   render () {
     let navbarComponent = !this.state.isFullPageLayout ? <Navbar/> : '';
     let sidebarComponent = !this.state.isFullPageLayout ? <Sidebar/> : '';
@@ -38,6 +42,7 @@ class App extends Component {
     }
   }
 
+ 
   onRouteChanged() {
     console.log("ROUTE CHANGED");
     const { i18n } = this.props;
@@ -71,5 +76,7 @@ class App extends Component {
   }
 
 }
+
+
 
 export default withTranslation()(withRouter(App));

@@ -2,10 +2,32 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Collapse } from 'react-bootstrap';
 import { Trans } from 'react-i18next';
+import {connect} from 'react-redux';
+import {changeState} from '../Redux/actions/substationActions'
+
 
 class Sidebar extends Component {
 
   state = {};
+
+  updateState(name){
+    this.props.subtations.forEach((obj => {
+      if(obj.name === name)
+      {
+        if(!obj.state){
+          this.props.changeState(obj.name,true)
+        }
+        else{
+          this.props.changeState(obj.name,false)
+        }
+      }
+      else{
+        this.props.changeState(obj.name,false)
+      }
+  }));
+  this.toggleMenuState('novo')
+  console.log(this.props.subtations)
+  }
 
   toggleMenuState(menuState) {
     if (this.state[menuState]) {
@@ -20,17 +42,22 @@ class Sidebar extends Component {
     }
   }
 
+
+
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
       this.onRouteChanged();
     }
   }
 
+
   onRouteChanged() {
     document.querySelector('#sidebar').classList.remove('active');
     Object.keys(this.state).forEach(i => {
       this.setState({[i]: false});
     });
+
+    
 
     const dropdownPaths = [
       {path:'/apps', state: 'appsMenuOpen'},
@@ -39,15 +66,20 @@ class Sidebar extends Component {
       {path:'/tables', state: 'tablesMenuOpen'},
       {path:'/icons', state: 'iconsMenuOpen'},
       {path:'/charts', state: 'chartsMenuOpen'},
-      {path:'/error-pages', state: 'errorPagesMenuOpen'},
+      
     ];
+
+
+
+    this.props.subtations.forEach((obj => {
+        dropdownPaths.push({path:'/substation', state: obj.name});
+    }));
 
     dropdownPaths.forEach((obj => {
       if (this.isPathActive(obj.path)) {
         this.setState({[obj.state] : true})
       }
     }));
- 
   }
 
   render () {
@@ -82,6 +114,34 @@ class Sidebar extends Component {
               <span className="menu-title"><Trans>Dashboard</Trans></span>
             </Link>
           </li>
+          {this.props.subtations.map((sub,index)=> 
+							 <li className={ this.isPathActive('/substation') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
+               <div className={ this.props.subtations[index].state ? 'nav-link menu-expanded' : 'nav-link' } onClick={ () => this.updateState(sub.name) } data-toggle="collapse">
+                 <span className="menu-icon">
+                   <i className="mdi mdi-houzz-box"></i>
+                 </span>
+                 <Link className="nav-link"  to="/dashboard">
+                 <span ><Trans>{sub.name}</Trans></span>
+                 </Link>
+                 <i className="menu-arrow"></i>
+               </div>
+               
+               <Collapse in={ this.props.subtations[index].state }>
+                 <div>
+                   <ul className="nav flex-column sub-menu">
+                   <li className="nav-item"> <Link className={ this.isPathActive('/substation/nzm') ? 'nav-link active' : 'nav-link' } to="/substation/nzm">
+                   <span className="menu-icon"><i className="mdi mdi-flash-off"></i></span><Trans>Disconnector</Trans></Link></li>
+                  <li className="nav-item"> <Link className={ this.isPathActive('/substation/nzm') ? 'nav-link active' : 'nav-link' } to="/substation/nzm">
+                   <span className="menu-icon"><i className="mdi mdi-image-broken-variant"></i></span><Trans>Fuse</Trans></Link></li>
+                  <li className="nav-item"> <Link className={ this.isPathActive('/substation/nzm') ? 'nav-link active' : 'nav-link' } to="/substation/nzm">
+                   <span className="menu-icon"><i className="mdi mdi-security-network"></i></span><Trans>LoadBreakSwitch</Trans></Link></li>
+                  <li className="nav-item"> <Link className={ this.isPathActive('/substation/nzm') ? 'nav-link active' : 'nav-link' } to="/substation/nzm">
+                   <span className="menu-icon"><i className="mdi mdi-switch"></i></span><Trans>Breaker</Trans></Link></li>
+                   </ul>
+                 </div>
+               </Collapse>
+             </li>
+						)}
           <li className={ this.isPathActive('/basic-ui') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
             <div className={ this.state.basicUiMenuOpen ? 'nav-link menu-expanded' : 'nav-link' } onClick={ () => this.toggleMenuState('basicUiMenuOpen') } data-toggle="collapse">
               <span className="menu-icon">
@@ -163,33 +223,14 @@ class Sidebar extends Component {
                 </ul>
               </div>
             </Collapse>
-          </li>
-          <li className="nav-item nav-category">
-            <span className="nav-link"><Trans>More</Trans></span>
-          </li>
-          <li className={ this.isPathActive('/error-pages') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
-            <div className={ this.state.errorPagesMenuOpen ? 'nav-link menu-expanded' : 'nav-link' } onClick={ () => this.toggleMenuState('errorPagesMenuOpen') } data-toggle="collapse">
-              <span className="menu-icon">
-                <i className="mdi mdi-lock"></i>
-              </span>
-              <span className="menu-title"><Trans>Error Pages</Trans></span>
-              <i className="menu-arrow"></i>
-            </div>
-            <Collapse in={ this.state.errorPagesMenuOpen }>
-              <div>
-                <ul className="nav flex-column sub-menu">
-                  <li className="nav-item"> <Link className={ this.isPathActive('/error-pages/error-404') ? 'nav-link active' : 'nav-link' } to="/error-pages/error-404">404</Link></li>
-                  <li className="nav-item"> <Link className={ this.isPathActive('/error-pages/error-500') ? 'nav-link active' : 'nav-link' } to="/error-pages/error-500">500</Link></li>
-                </ul>
-              </div>
-            </Collapse>
-          </li>
+          </li>						
         </ul>
       </nav>
     );
   }
 
   isPathActive(path) {
+  
     return this.props.location.pathname.startsWith(path);
   }
 
@@ -214,4 +255,16 @@ class Sidebar extends Component {
 
 }
 
-export default withRouter(Sidebar);
+const allSubs = (state) => {
+    return {
+      subtations : state.allSubstations.substations
+    }
+}
+
+const funkcije = () =>{
+  return{
+    changeState,
+  }
+}
+
+export default connect(allSubs,funkcije())(withRouter(Sidebar));

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 //import { Doughnut } from 'react-chartjs-2';
 //import Slider from "react-slick";
@@ -6,10 +6,10 @@ import { TodoListComponent } from '../apps/TodoList'
 import {Bar, Pie} from 'react-chartjs-2';
 //import { VectorMap } from "react-jvectormap"
 
-export class Dashboard extends Component {
+const Dashboard = () => {
   
 
-  data = {
+  const data = {
     labels: ["Substation1", "Substation2", "Substation3", "Substation4","Substation5"],
     datasets: [{
       label: '# of Votes',
@@ -33,7 +33,7 @@ export class Dashboard extends Component {
     }]
 };
 
-options = {
+const options = {
   scales: {
     yAxes: [{
       ticks: {
@@ -60,7 +60,7 @@ options = {
 }
 
 
-doughnutPieData = {
+const doughnutPieData = {
   datasets: [{
     data: [23, 12, 15, 30],
     backgroundColor: [
@@ -90,7 +90,7 @@ doughnutPieData = {
   ]
 };
 
-doughnutPieOptions = {
+const doughnutPieOptions = {
   responsive: true,
   animation: {
     animateScale: true,
@@ -98,7 +98,7 @@ doughnutPieOptions = {
   }
 };
 
-  transactionHistoryOptions = {
+  const transactionHistoryOptions = {
     responsive: true,
     maintainAspectRatio: true,
     segmentShowStroke: false,
@@ -116,16 +116,16 @@ doughnutPieOptions = {
     }
   }
 
-  sliderSettings = {
+  const sliderSettings = {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1
   }
-  toggleProBanner() {
-    document.querySelector('.proBanner').classList.toggle("hide");
-  }
-  render () {
+
+  // const toggleProBanner = () => {
+  //   document.querySelector('.proBanner').classList.toggle("hide");
+  // }
     return (
       <div>
         <div className="row">
@@ -218,7 +218,7 @@ doughnutPieOptions = {
                 <div className="card">
                     <div className="card-body">
                         <h4 className="card-title">Substations - Switch Count</h4>
-                        <Bar data={this.data} options={this.options} />    
+                        <Bar data={data} options={options} />    
                     </div>
                 </div>
             </div>
@@ -226,7 +226,7 @@ doughnutPieOptions = {
                 <div className="card">
                     <div className="card-body">
                         <h4 className="card-title">Switches - Pie Chart</h4>
-                        <Pie data={this.doughnutPieData} options={this.doughnutPieOptions} />                                
+                        <Pie data={doughnutPieData} options={doughnutPieOptions} />                                
                     </div>
                 </div>
             </div>
@@ -245,7 +245,7 @@ doughnutPieOptions = {
 
       </div> 
     );
-  }
+  
 }
 
 export default Dashboard;
