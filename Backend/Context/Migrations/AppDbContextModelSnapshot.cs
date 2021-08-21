@@ -36,6 +36,9 @@ namespace Context.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("State")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("Substations");

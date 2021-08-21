@@ -1,0 +1,21 @@
+2021-08-20 10:02:41.5702|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-20 10:02:41.6661|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-20 10:02:41.6807|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-20 12:41:03.4286|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-20 12:41:03.4969|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-20 12:41:03.5242|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-20 12:41:38.9990|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-08-20 12:41:50.7712|ERROR|allfile|Something went wrong: Substation with mrid='SUB4' already exists, 409
+2021-08-20 12:52:11.3529|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-20 12:52:11.4360|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-20 12:52:11.4360|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-20 12:52:17.4633|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-08-20 12:52:17.4841|ERROR|allfile|Something went wrong: Substation with Id=6 don't exists, 404
+2021-08-20 13:38:37.6674|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-20 13:38:37.7499|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-20 13:38:37.7868|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-20 13:40:16.4539|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-20 13:40:16.5219|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-20 13:40:16.5341|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-20 13:40:45.2664|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-08-20 13:40:48.3804|ERROR|allfile|Something went wrong: Not valid input!

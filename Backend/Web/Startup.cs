@@ -7,10 +7,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Repository.DIExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Web.Extensions;
+using Web.Services;
+using Web.Services.Interfaces;
 
 namespace Web
 {
@@ -27,6 +31,9 @@ namespace Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddRepositories();
+            services.AddScoped<ISubstationService, SubstationService>();
+            services.AddAutoMapper(typeof(Startup));
             services.AddDbContext<AppDbContext>(options =>
                   options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
@@ -39,6 +46,8 @@ namespace Web
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.ConfigureExeptionHandler();
 
             app.UseRouting();
 

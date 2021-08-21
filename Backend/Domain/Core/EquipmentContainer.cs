@@ -16,6 +16,8 @@ namespace Domain.Core
         public List<Fuse> Fuses { get => fuses; set => fuses = value; }
         public List<LoadBreakSwitch> LoadBreakSwitches { get => loadBreakSwitches; set => loadBreakSwitches = value; }
         public List<Breaker> Breakers { get => breakers; set => breakers = value; }
+        public bool State{get;set;}
+
 
         public EquipmentContainer(int id) : base(id) { }
         public EquipmentContainer() { }
