@@ -16,7 +16,7 @@ namespace Repository
 
         public bool GetByMridAndName(string mrid, string name)
         {
-            return _context.Substations.Any(s => s.Mrid == mrid || s.Name == name);
+            return _context.Fuses.Any(s => s.Mrid == mrid || s.Name == name);
         }
 
     }

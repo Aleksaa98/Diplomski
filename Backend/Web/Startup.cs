@@ -33,6 +33,10 @@ namespace Web
             services.AddControllers();
             services.AddRepositories();
             services.AddScoped<ISubstationService, SubstationService>();
+            services.AddScoped<IDisconnectorService, DisconnectorService>();
+            services.AddScoped<IFuseService, FuseService>();
+            services.AddScoped<ILoadBreakSwitchService, LoadBreakSwitchService>();
+            services.AddScoped<IBreakerService, BreakerService>();
             services.AddAutoMapper(typeof(Startup));
             services.AddDbContext<AppDbContext>(options =>
                   options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));

@@ -1,26 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Domain.Enumerations
 {
 	public enum PhaseCode
 	{
-		Unknown = 0x0,
-		N = 0x1,
-		C = 0x2,
-		CN = 0x3,
-		B = 0x4,
-		BN = 0x5,
-		BC = 0x6,
-		BCN = 0x7,
-		A = 0x8,
-		AN = 0x9,
-		AC = 0xA,
-		ACN = 0xB,
-		AB = 0xC,
-		ABN = 0xD,
-		ABC = 0xE,
-		ABCN = 0xF
+		Unknown = 0,
+		N = 1,
+		C = 2,
+		CN = 3,
+		B = 4,
+		BN = 5,
+		BC = 6,
+		BCN = 7,
+		A = 8,
+		AN = 9,
+		AC = 10,
+		ACN = 11,
+		AB = 12,
+		ABN = 13,
+		ABC = 14,
+		ABCN = 15
 	}
 }
