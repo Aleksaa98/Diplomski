@@ -10,7 +10,7 @@ namespace Domain.Interfaces
         IDisconnectorRepository Disconnector { get; }
         IFuseRepository Fuse { get; }
         IBreakerRepository Breaker { get; }
-        ILoadBreakSwitchRepository LoadBreakSwitchRepository { get; }
+        ILoadBreakSwitchRepository LoadBreakSwitch { get; }
         int Complete();
     }
 }

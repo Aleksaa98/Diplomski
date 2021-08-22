@@ -17,7 +17,7 @@ namespace Repository
 
         public IBreakerRepository Breaker { get; }
 
-        public ILoadBreakSwitchRepository LoadBreakSwitchRepository { get; }
+        public ILoadBreakSwitchRepository LoadBreakSwitch { get; }
 
         public UnitOfWork(AppDbContext context, ISubstationRepository substationRepository, IDisconnectorRepository disconnectorRepository, IFuseRepository fuseRepository, ILoadBreakSwitchRepository loadBreakSwitchRepository, IBreakerRepository breakerRepository) 
         {
@@ -26,7 +26,7 @@ namespace Repository
             Disconnector = disconnectorRepository;
             Fuse = fuseRepository;
             Breaker = breakerRepository;
-            LoadBreakSwitchRepository = loadBreakSwitchRepository;
+            LoadBreakSwitch = loadBreakSwitchRepository;
         }
         public int Complete()
         {

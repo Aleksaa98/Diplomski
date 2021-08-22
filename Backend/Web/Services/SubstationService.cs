@@ -6,7 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Web.Exceptions;
-using Web.Models;
+using Web.Models.Request;
+using Web.Models.Response;
 using Web.Services.Interfaces;
 
 namespace Web.Services
@@ -133,11 +134,11 @@ namespace Web.Services
                 throw new ValidationException();
             }
         }
-        private bool Validation(SubstationRequest substationDTO)
+        private bool Validation(SubstationRequest substation)
         {
-            if (substationDTO == null) return false;
-            if (substationDTO.Id < 0) return false;
-            if (string.IsNullOrEmpty(substationDTO.Mrid) || string.IsNullOrEmpty(substationDTO.Name) || string.IsNullOrEmpty(substationDTO.Description))
+            if (substation == null) return false;
+            if (substation.Id < 0) return false;
+            if (string.IsNullOrEmpty(substation.Mrid) || string.IsNullOrEmpty(substation.Name) || string.IsNullOrEmpty(substation.Description))
                 return false;
 
             return true;
