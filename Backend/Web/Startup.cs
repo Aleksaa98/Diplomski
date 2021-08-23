@@ -46,14 +46,19 @@ namespace Web
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Backend", Version = "v1" });
             });
+
             services.AddControllersWithViews().AddNewtonsoftJson(options =>
              options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(options => options.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -62,9 +67,9 @@ namespace Web
             }
 
             app.ConfigureExeptionHandler();
-
+            app.UseHttpsRedirection();
             app.UseRouting();
-
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

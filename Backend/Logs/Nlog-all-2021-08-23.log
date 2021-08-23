@@ -38,3 +38,28 @@
 2021-08-23 20:07:22.4534|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
 2021-08-23 20:07:22.5470|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
 2021-08-23 20:07:22.5721|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 20:15:33.6821|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 20:15:33.8400|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 20:15:33.8674|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 20:16:09.0121|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-08-23 20:20:20.6383|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 20:20:20.7175|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 20:20:20.7175|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 20:20:20.7175|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-08-23 20:20:51.2253|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 20:20:51.2908|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 20:20:51.2908|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-08-23 20:20:51.3091|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 20:23:06.5340|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 20:23:06.6028|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 20:23:06.6250|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 20:23:06.6028|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-08-23 20:23:36.4130|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 20:23:36.4944|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 20:23:36.4877|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-08-23 20:23:36.4944|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 20:24:23.4078|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 20:24:23.5000|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 20:24:23.5172|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 20:24:23.9999|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-08-23 20:24:38.2712|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
