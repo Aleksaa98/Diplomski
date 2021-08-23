@@ -1,39 +1,48 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 //import { Dropdown } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import Dialog from '@material-ui/core/Dialog';
 import { Link } from 'react-router-dom';
 import { Trans } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { addSubstation,getAllSubstations } from '../Redux/actions/substationActions';
+
 
 const Navbar =  () => {
   const [openAddMenu,setOpenAddMenu] = useState(false);
 	const [substation,setSubstation] = useState({
 		mrId: "",
 		name: "",
-		descritpion: "",
+		description: "",
+    state:false
 	})
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllSubstations());
+  },[]);
 
   const handleMenuClose = () => {
 		setOpenAddMenu(false);
 	}
 
-  const handleChangeInput =(event) => {
-		setSubstation({
-			...substation,
-			[event.target.name]: event.target.value,
-		});
-	};
-
   const handleNewSubstation = () => {
-		// dispatch(getAllSubstations());
-		// dispatch(addSubstation(substation));
-		// setSubstation({
-		// mrId: "",
-		// name: "",
-		// descritpion: "",
-		// });
-		// handleMenuClose();
+		 dispatch(getAllSubstations());
+		 dispatch(addSubstation(substation));
+		setSubstation({
+		mrId: "",
+		name: "",
+		descritpion: "",
+		});
 	}
+
+  const handleInputChange = (event) => {
+    setSubstation({
+      ...substation,
+      [event.target.name]: event.target.value,
+    });
+  }
 
 
   const toggleOffcanvas = () => {
@@ -74,23 +83,23 @@ const Navbar =  () => {
                   <Form.Group className="row">
                     <label htmlFor="exampleInputMrid" className="col-sm-3 col-form-label">MrID</label>
                     <div className="col-sm-9">
-                    <Form.Control type="text" className="form-control" id="exampleInputMrid" placeholder="MrID" />
+                    <Form.Control type="text" className="form-control" id="exampleInputMrid" placeholder="MrID" name="mrId" onChange={handleInputChange}/>
                     </div>
                   </Form.Group>
                   <Form.Group className="row">
                     <label htmlFor="exampleInputName" className="col-sm-3 col-form-label">Name</label>
                     <div className="col-sm-9">
-                    <Form.Control type="name" className="form-control" id="exampleInputName" placeholder="Name" />
+                    <Form.Control type="name" className="form-control" id="exampleInputName" placeholder="Name" name="name" onChange={handleInputChange}/>
                     </div>
                   </Form.Group>
                   <Form.Group className="row">
                     <label htmlFor="exampleInputDescription" className="col-sm-3 col-form-label">Desc</label>
                     <div className="col-sm-9">
-                    <Form.Control type="text" className="form-control" id="exampleInputDescription" placeholder="Description" />
+                    <Form.Control type="text" className="form-control" id="exampleInputDescription" placeholder="Description" name="description" onChange={handleInputChange}/>
                     </div>
                   </Form.Group>
                   <div className="template-demo">
-                  <button type="submit" className="btn btn-primary btn-icon-text">
+                  <button type="button" className="btn btn-primary btn-icon-text" onClick={handleNewSubstation}>
                         <i className="mdi mdi-file-check btn-icon-prepend"></i>
                         Submit
                   </button>

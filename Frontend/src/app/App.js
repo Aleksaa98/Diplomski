@@ -79,4 +79,4 @@ class App extends Component {
 
 
 
-export default withTranslation()(withRouter(App));
+export default (withTranslation()(withRouter(App)));

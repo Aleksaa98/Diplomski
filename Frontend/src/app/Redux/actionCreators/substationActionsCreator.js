@@ -1,10 +1,10 @@
 import {ActionTypes} from "../constants/actions-types";
 
 
-export const addSubstationCreator = (substations) => {
+export const addSubstationCreator = (substation) => {
     return {
         type: ActionTypes.ADD_SUBSTATION,
-        payload: substations
+        payload: substation
     };
 };
 

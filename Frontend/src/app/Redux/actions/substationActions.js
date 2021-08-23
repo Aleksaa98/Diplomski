@@ -1,15 +1,17 @@
 import {allSubstations, updateSubstationCreator,deleteSubstationCreator,addSubstationCreator,changeStateCreator} from "../actionCreators/substationActionsCreator";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:8000/api";
+axios.defaults.baseURL = "http://localhost:56550/api";
 
 export const getAllSubstations = () => async(dispatch) =>
 {
-    // const {data} = await axios.get("/substations").catch((err) =>{
+    // const {data} = await axios.get("/Substation").catch((err) =>{
     //     console.log("Error",err);
     // });
-
-    dispatch(allSubstations());
+    const data = [{mrId:'12',name:'neki',description:'neko',state:false}]
+    console.log(data);
+    
+    dispatch(allSubstations(data));
 }
 
 export const updateSubstation = (substation) => async(dispatch) =>
@@ -29,10 +31,11 @@ export const deleteSubstation = (substation) => async(dispatch) =>
 }
 
 export const addSubstation = (substation) => async(dispatch) => {
-    const {data} = await axios.get("/substations").catch((err) =>{
-        console.log("Error",err);
-    });
-    dispatch(addSubstationCreator(data));
+    // const {data} = await axios.get("/substations").catch((err) =>{
+    //     console.log("Error",err);
+    // });
+    console.log(substation);
+    dispatch(addSubstationCreator(substation));
     
 }
 

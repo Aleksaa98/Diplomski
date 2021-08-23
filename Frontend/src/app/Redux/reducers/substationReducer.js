@@ -1,19 +1,21 @@
 import { ActionTypes } from "../constants/actions-types";
 
 const initialState = {
-    substations: [
-        {id:1,name:'prvi',description:'prvi sub',mrId:'asd',dissCount:15,fuseCount:32,switchBreakCount:12,breakerCount:22,state:false},
-        {id:2,name:'drugi',description:'drugi sub',mrId:'dsa',dissCount:23,fuseCount:13,switchBreakCount:42,breakerCount:52,state:false},
-        {id:3,name:'treci',description:'treci sub',mrId:'sda',dissCount:123,fuseCount:23,switchBreakCount:51,breakerCount:76,state:false}
-    ],
+    substations: [],
 }
 
 
 export const substationReducer = (state = initialState, action) => {
     switch (action.type) {
         case ActionTypes.ADD_SUBSTATION:
+            const newSubstations = [
+                ...state.substations,
+                action.payload
+            ]
+            console.log(newSubstations);
+            state.substations = newSubstations;
             return {
-                substations: action.payload,
+                substations: state.substations,
             };
         case ActionTypes.ALL_SUBSTATIONS:
             return{

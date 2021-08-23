@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { Collapse } from 'react-bootstrap';
 import { Trans } from 'react-i18next';
 import {connect} from 'react-redux';
-import {changeState} from '../Redux/actions/substationActions'
+import {changeState, getAllSubstations} from '../Redux/actions/substationActions'
 
 
 class Sidebar extends Component {
@@ -123,7 +123,7 @@ class Sidebar extends Component {
                    <i className="mdi mdi-houzz-box"></i>
                  </span>
                  
-                 <span ><Trans>{sub.name}</Trans></span>
+                 <span  className="menu-title"><Trans>{sub.name}</Trans></span>
                  
                  <i className="menu-arrow"></i>
                 </Link>
@@ -258,7 +258,9 @@ class Sidebar extends Component {
 
 }
 
+
 const allSubs = (state) => {
+  getAllSubstations();
     return {
       subtations : state.allSubstations.substations
     }
@@ -267,6 +269,7 @@ const allSubs = (state) => {
 const funkcije = () =>{
   return{
     changeState,
+    getAllSubstations
   }
 }
 
