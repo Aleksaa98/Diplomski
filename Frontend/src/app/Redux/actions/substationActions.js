@@ -5,10 +5,10 @@ axios.defaults.baseURL = "http://localhost:56550/api";
 
 export const getAllSubstations = () => async(dispatch) =>
 {
-    // const {data} = await axios.get("/Substation").catch((err) =>{
-    //     console.log("Error",err);
-    // });
-    const data = [{mrId:'12',name:'neki',description:'neko',state:false}]
+    const {data} = await axios.get("/Substation").catch((err) =>{
+        console.log("Error",err);
+    });
+    //const data = [{mrId:'12',name:'neki',description:'neko',state:false}]
     console.log(data);
     
     dispatch(allSubstations(data));

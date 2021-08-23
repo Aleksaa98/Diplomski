@@ -7,15 +7,13 @@ namespace Domain.Core
 {
     public class EquipmentContainer : ConnectivityNodeContainer
     {
-        private List<Disconnector> disconnector = new List<Disconnector>();
-        private List<Fuse> fuses = new List<Fuse>();
-        private List<LoadBreakSwitch> loadBreakSwitches = new List<LoadBreakSwitch>();
-        private List<Breaker> breakers = new List<Breaker>();
+        public virtual ICollection<Disconnector> Disconnector { get; set; }
 
-        public List<Disconnector> Disconnector { get => disconnector; set => disconnector = value; }
-        public List<Fuse> Fuses { get => fuses; set => fuses = value; }
-        public List<LoadBreakSwitch> LoadBreakSwitches { get => loadBreakSwitches; set => loadBreakSwitches = value; }
-        public List<Breaker> Breakers { get => breakers; set => breakers = value; }
+        public virtual ICollection<Fuse> Fuses { get; set; }
+
+        public virtual ICollection<LoadBreakSwitch> LoadBreakSwitches { get; set; }
+
+        public virtual ICollection<Breaker> Breakers { get; set; }
         public bool State{get;set;}
 
 

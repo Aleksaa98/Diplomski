@@ -23,5 +23,6 @@ namespace Web.Models
         public bool NormalOpen { get; set; }
         public bool Retained { get; set; }
         public int SwitchOnCount { get; set; }
+        public int SubstationId { get; set; }
     }
 }

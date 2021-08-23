@@ -12,7 +12,7 @@ using Web.Services.Interfaces;
 
 namespace Web.Services
 {
-    public class LoadBreakSwitchService :ILoadBreakSwitchService
+    public class LoadBreakSwitchService : ILoadBreakSwitchService
     {
         public IUnitOfWork _unitOfWork;
         public readonly IMapper _mapper;
@@ -30,6 +30,10 @@ namespace Web.Services
                 if (_unitOfWork.Substations.GetByMridAndName(loadBreakSwitchRequest.Mrid, loadBreakSwitchRequest.Name))
                 {
                     throw new AlreadyExistsException("LoadBreakSwitch", loadBreakSwitchRequest.Mrid, loadBreakSwitchRequest.Name);
+                }
+                else if (!_unitOfWork.Substations.CheckIfEntityExists(loadBreakSwitchRequest.SubstationId))
+                {
+                    throw new NotFoundException("Substation", loadBreakSwitchRequest.SubstationId);
                 }
                 else
                 {
@@ -97,6 +101,10 @@ namespace Web.Services
                     else
                         return false;
                 }
+                else if (!_unitOfWork.Substations.CheckIfEntityExists(loadBreakSwitchRequest.SubstationId))
+                {
+                    throw new NotFoundException("Substation", loadBreakSwitchRequest.SubstationId);
+                }
                 else
                 {
                     throw new NotFoundException("Substation", id);
@@ -139,7 +147,7 @@ namespace Web.Services
             if (loadBreakSwitch.Id < 0) return false;
             if (string.IsNullOrEmpty(loadBreakSwitch.Mrid) || string.IsNullOrEmpty(loadBreakSwitch.Name) || string.IsNullOrEmpty(loadBreakSwitch.Description))
                 return false;
-            if (loadBreakSwitch.CostPerUnit < 0 || loadBreakSwitch.FailureRate < 0 || loadBreakSwitch.Phases < 0 || loadBreakSwitch.RatedVoltage < 0 || loadBreakSwitch.SwitchOnCount < 0 || loadBreakSwitch.RatedCurrent<0)
+            if (loadBreakSwitch.CostPerUnit < 0 || loadBreakSwitch.FailureRate < 0 || loadBreakSwitch.Phases < 0 || loadBreakSwitch.RatedVoltage < 0 || loadBreakSwitch.SwitchOnCount < 0 || loadBreakSwitch.RatedCurrent < 0 || loadBreakSwitch.SubstationId < 0)
                 return false;
 
             return true;

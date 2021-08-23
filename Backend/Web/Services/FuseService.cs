@@ -12,7 +12,7 @@ using Web.Services.Interfaces;
 
 namespace Web.Services
 {
-    public class FuseService:IFuseService
+    public class FuseService : IFuseService
     {
         public IUnitOfWork _unitOfWork;
         public readonly IMapper _mapper;
@@ -30,6 +30,10 @@ namespace Web.Services
                 if (_unitOfWork.Fuse.GetByMridAndName(fuse.Mrid, fuse.Name))
                 {
                     throw new AlreadyExistsException("Fuse", fuse.Mrid, fuse.Name);
+                }
+                else if (!_unitOfWork.Substations.CheckIfEntityExists(fuse.SubstationId))
+                {
+                    throw new NotFoundException("Substation", fuse.SubstationId);
                 }
                 else
                 {
@@ -97,6 +101,10 @@ namespace Web.Services
                     else
                         return false;
                 }
+                else if (!_unitOfWork.Substations.CheckIfEntityExists(fuse.SubstationId))
+                {
+                    throw new NotFoundException("Substation", fuse.SubstationId);
+                }
                 else
                 {
                     throw new NotFoundException("Fuse", id);
@@ -139,7 +147,7 @@ namespace Web.Services
             if (fuse.Id < 0) return false;
             if (string.IsNullOrEmpty(fuse.Mrid) || string.IsNullOrEmpty(fuse.Name) || string.IsNullOrEmpty(fuse.Description))
                 return false;
-            if (fuse.CostPerUnit < 0 || fuse.FailureRate < 0 || fuse.Phases < 0 || fuse.RatedVoltage < 0 || fuse.SwitchOnCount < 0 || fuse.RatingCurrent < 0 || fuse.MaxFaultCurrent<0)
+            if (fuse.CostPerUnit < 0 || fuse.FailureRate < 0 || fuse.Phases < 0 || fuse.RatedVoltage < 0 || fuse.SwitchOnCount < 0 || fuse.RatingCurrent < 0 || fuse.MaxFaultCurrent < 0 || fuse.SubstationId < 0)
                 return false;
 
             return true;

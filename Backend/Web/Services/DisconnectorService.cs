@@ -12,7 +12,7 @@ using Web.Services.Interfaces;
 
 namespace Web.Services
 {
-    public class DisconnectorService: IDisconnectorService
+    public class DisconnectorService : IDisconnectorService
     {
         public IUnitOfWork _unitOfWork;
         public readonly IMapper _mapper;
@@ -30,6 +30,10 @@ namespace Web.Services
                 if (_unitOfWork.Disconnector.GetByMridAndName(disconnector.Mrid, disconnector.Name))
                 {
                     throw new AlreadyExistsException("Disconnector", disconnector.Mrid, disconnector.Name);
+                }
+                else if (!_unitOfWork.Substations.CheckIfEntityExists(disconnector.SubstationId))
+                {
+                    throw new NotFoundException("Substation", disconnector.SubstationId);
                 }
                 else
                 {
@@ -97,6 +101,10 @@ namespace Web.Services
                     else
                         return false;
                 }
+                else if (!_unitOfWork.Substations.CheckIfEntityExists(disconnector.SubstationId))
+                {
+                    throw new NotFoundException("Substation", disconnector.SubstationId);
+                }
                 else
                 {
                     throw new NotFoundException("Disconnector", id);
@@ -139,7 +147,7 @@ namespace Web.Services
             if (disconnector.Id < 0) return false;
             if (string.IsNullOrEmpty(disconnector.Mrid) || string.IsNullOrEmpty(disconnector.Name) || string.IsNullOrEmpty(disconnector.Description))
                 return false;
-            if (disconnector.CostPerUnit < 0 || disconnector.FailureRate < 0 || disconnector.Phases < 0 || disconnector.RatedVoltage < 0 || disconnector.SwitchOnCount < 0 || disconnector.ReactiveBreakingCurrent < 0)
+            if (disconnector.CostPerUnit < 0 || disconnector.FailureRate < 0 || disconnector.Phases < 0 || disconnector.RatedVoltage < 0 || disconnector.SwitchOnCount < 0 || disconnector.ReactiveBreakingCurrent < 0 || disconnector.SubstationId < 0)
                 return false;
 
             return true;

@@ -17,9 +17,24 @@ namespace Repository
         {
         }
 
+        public bool CheckIfEntityExists(int id)
+        {
+            return _context.Substations.Any(e => e.Id == id);
+        }
+
         public bool GetByMridAndName(string mrid, string name)
         {
-            return _context.Substations.Any(s => s.Mrid == mrid || s.Name==name);
+            return _context.Substations.Any(s => s.Mrid == mrid || s.Name == name);
+        }
+        public async Task<IEnumerable<Substation>> GetAllSubstation()
+        {
+            //List<Substation> substations = await _context.Set<Substation>().ToListAsync();
+
+            List<Substation> substations = await _context.Set<Substation>()
+                                    .Include(m => m.Breakers).Include(m => m.Disconnector).Include(m => m.LoadBreakSwitches).Include(m => m.Fuses)
+                                    .ToListAsync();
+
+            return substations;
         }
     }
 }

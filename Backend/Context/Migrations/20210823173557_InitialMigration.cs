@@ -30,7 +30,6 @@ namespace Context.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     InTransitTime = table.Column<float>(type: "real", nullable: false),
                     RatedCurrent = table.Column<float>(type: "real", nullable: false),
-                    SubstationId = table.Column<int>(type: "int", nullable: true),
                     Mrid = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -39,6 +38,7 @@ namespace Context.Migrations
                     IsUnderground = table.Column<bool>(type: "bit", nullable: false),
                     Phases = table.Column<int>(type: "int", nullable: false),
                     RatedVoltage = table.Column<float>(type: "real", nullable: false),
+                    SubstationId = table.Column<int>(type: "int", nullable: false),
                     NormalOpen = table.Column<bool>(type: "bit", nullable: false),
                     Retained = table.Column<bool>(type: "bit", nullable: false),
                     SwitchOnCount = table.Column<int>(type: "int", nullable: false)
@@ -51,7 +51,7 @@ namespace Context.Migrations
                         column: x => x.SubstationId,
                         principalTable: "Substations",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -61,7 +61,6 @@ namespace Context.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ReactiveBreakingCurrent = table.Column<float>(type: "real", nullable: false),
-                    SubstationId = table.Column<int>(type: "int", nullable: true),
                     Mrid = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -70,6 +69,7 @@ namespace Context.Migrations
                     IsUnderground = table.Column<bool>(type: "bit", nullable: false),
                     Phases = table.Column<int>(type: "int", nullable: false),
                     RatedVoltage = table.Column<float>(type: "real", nullable: false),
+                    SubstationId = table.Column<int>(type: "int", nullable: false),
                     NormalOpen = table.Column<bool>(type: "bit", nullable: false),
                     Retained = table.Column<bool>(type: "bit", nullable: false),
                     SwitchOnCount = table.Column<int>(type: "int", nullable: false)
@@ -82,7 +82,7 @@ namespace Context.Migrations
                         column: x => x.SubstationId,
                         principalTable: "Substations",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -94,7 +94,6 @@ namespace Context.Migrations
                     RatingCurrent = table.Column<float>(type: "real", nullable: false),
                     Cutout = table.Column<bool>(type: "bit", nullable: false),
                     MaxFaultCurrent = table.Column<float>(type: "real", nullable: false),
-                    SubstationId = table.Column<int>(type: "int", nullable: true),
                     Mrid = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -103,6 +102,7 @@ namespace Context.Migrations
                     IsUnderground = table.Column<bool>(type: "bit", nullable: false),
                     Phases = table.Column<int>(type: "int", nullable: false),
                     RatedVoltage = table.Column<float>(type: "real", nullable: false),
+                    SubstationId = table.Column<int>(type: "int", nullable: false),
                     NormalOpen = table.Column<bool>(type: "bit", nullable: false),
                     Retained = table.Column<bool>(type: "bit", nullable: false),
                     SwitchOnCount = table.Column<int>(type: "int", nullable: false)
@@ -115,7 +115,7 @@ namespace Context.Migrations
                         column: x => x.SubstationId,
                         principalTable: "Substations",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -125,7 +125,6 @@ namespace Context.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RatedCurrent = table.Column<float>(type: "real", nullable: false),
-                    SubstationId = table.Column<int>(type: "int", nullable: true),
                     Mrid = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -134,6 +133,7 @@ namespace Context.Migrations
                     IsUnderground = table.Column<bool>(type: "bit", nullable: false),
                     Phases = table.Column<int>(type: "int", nullable: false),
                     RatedVoltage = table.Column<float>(type: "real", nullable: false),
+                    SubstationId = table.Column<int>(type: "int", nullable: false),
                     NormalOpen = table.Column<bool>(type: "bit", nullable: false),
                     Retained = table.Column<bool>(type: "bit", nullable: false),
                     SwitchOnCount = table.Column<int>(type: "int", nullable: false)
@@ -146,7 +146,7 @@ namespace Context.Migrations
                         column: x => x.SubstationId,
                         principalTable: "Substations",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

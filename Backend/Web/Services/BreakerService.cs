@@ -12,7 +12,7 @@ using Web.Services.Interfaces;
 
 namespace Web.Services
 {
-    public class BreakerService: IBreakerService
+    public class BreakerService : IBreakerService
     {
         public IUnitOfWork _unitOfWork;
         public readonly IMapper _mapper;
@@ -29,7 +29,11 @@ namespace Web.Services
             {
                 if (_unitOfWork.Breaker.GetByMridAndName(breaker.Mrid, breaker.Name))
                 {
-                    throw new AlreadyExistsException("Breaker", breaker.Mrid,breaker.Name);
+                    throw new AlreadyExistsException("Breaker", breaker.Mrid, breaker.Name);
+                }
+                else if (!_unitOfWork.Substations.CheckIfEntityExists(breaker.SubstationId))
+                {
+                    throw new NotFoundException("Substation", breaker.SubstationId);
                 }
                 else
                 {
@@ -97,6 +101,10 @@ namespace Web.Services
                     else
                         return false;
                 }
+                else if (!_unitOfWork.Substations.CheckIfEntityExists(breaker.SubstationId))
+                {
+                    throw new NotFoundException("Substation", breaker.SubstationId);
+                }
                 else
                 {
                     throw new NotFoundException("Breaker", id);
@@ -139,7 +147,7 @@ namespace Web.Services
             if (breaker.Id < 0) return false;
             if (string.IsNullOrEmpty(breaker.Mrid) || string.IsNullOrEmpty(breaker.Name) || string.IsNullOrEmpty(breaker.Description))
                 return false;
-            if (breaker.CostPerUnit < 0 || breaker.FailureRate < 0 || breaker.Phases < 0 || breaker.RatedVoltage < 0 || breaker.SwitchOnCount < 0 || breaker.InTransitTime < 0 || breaker.RatedCurrent<0)
+            if (breaker.CostPerUnit < 0 || breaker.FailureRate < 0 || breaker.Phases < 0 || breaker.RatedVoltage < 0 || breaker.SwitchOnCount < 0 || breaker.InTransitTime < 0 || breaker.RatedCurrent < 0 || breaker.SubstationId < 0)
                 return false;
 
             return true;

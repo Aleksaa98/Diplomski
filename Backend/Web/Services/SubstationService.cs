@@ -27,7 +27,7 @@ namespace Web.Services
         {
             if (Validation(substation))
             {
-                if ( _unitOfWork.Substations.GetByMridAndName(substation.Mrid, substation.Name)) 
+                if (_unitOfWork.Substations.GetByMridAndName(substation.Mrid, substation.Name))
                 {
                     throw new AlreadyExistsException("Substation", substation.Mrid, substation.Name);
                 }
@@ -38,7 +38,7 @@ namespace Web.Services
                     var result = _unitOfWork.Complete();
                     if (result > 0)
                         return true;
-                    else 
+                    else
                     {
                         //return false;
                         throw new Exception();
@@ -80,7 +80,7 @@ namespace Web.Services
 
         public async Task<IEnumerable<SubstationResponse>> GetAllSubstations()
         {
-            var list=await _unitOfWork.Substations.GetAll();
+            var list = await _unitOfWork.Substations.GetAllSubstation();
             var newList = _mapper.Map<List<SubstationResponse>>(list);
             return newList;
         }
@@ -92,7 +92,7 @@ namespace Web.Services
                 var substation = await _unitOfWork.Substations.Get(id);
                 if (substation != null)
                 {
-                    var newSubstation= _mapper.Map<SubstationResponse>(substation);
+                    var newSubstation = _mapper.Map<SubstationResponse>(substation);
                     return newSubstation;
                 }
                 else
@@ -101,7 +101,7 @@ namespace Web.Services
                 }
 
             }
-            
+
             return null;
         }
 

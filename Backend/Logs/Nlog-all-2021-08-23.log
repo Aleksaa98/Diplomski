@@ -1,3 +1,40 @@
 2021-08-23 13:22:25.6976|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
 2021-08-23 13:22:25.7274|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
 2021-08-23 13:22:25.7312|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\diplomski\Diplomski\Backend\Web
+2021-08-23 18:47:46.6418|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 18:47:46.7157|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 18:47:46.7157|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 18:52:50.3399|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 18:52:50.5457|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 18:52:50.6156|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 18:52:50.6322|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-08-23 19:37:06.0903|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 19:37:06.2449|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 19:37:06.2371|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-08-23 19:37:06.3272|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 19:52:11.0354|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 19:52:11.1138|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 19:52:11.1341|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 19:53:41.6785|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 19:53:41.7560|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 19:53:41.7698|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 19:54:19.5545|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 19:54:19.6927|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 19:54:19.7346|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 19:57:37.7817|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 19:57:37.9014|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 19:57:37.9014|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 19:58:05.2890|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-08-23 20:02:54.2747|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 20:02:54.3618|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 20:02:54.3852|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 20:03:58.4545|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-08-23 20:05:37.4952|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 20:05:37.5830|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 20:05:37.6174|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 20:06:25.3877|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 20:06:25.4721|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 20:06:25.4886|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
+2021-08-23 20:07:22.4534|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 20:07:22.5470|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 20:07:22.5721|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
