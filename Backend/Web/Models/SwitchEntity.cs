@@ -9,12 +9,8 @@ using System.Threading.Tasks;
 
 namespace Web.Models
 {
-    public class SwitchEntity
+    public class SwitchEntity : Entity
     {
-        public int Id { get; set; }
-        public string Mrid { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
         public float CostPerUnit { get; set; }
         public int FailureRate { get; set; }
         public bool IsUnderground { get; set; }

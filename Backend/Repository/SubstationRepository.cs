@@ -36,5 +36,11 @@ namespace Repository
 
             return substations;
         }
+        public void DeleteSubstation(Substation entity)
+        {
+            var substations = _context.Substations.OrderBy(e => e.Id).Include(m => m.Breakers).Include(m => m.Disconnector).Include(m => m.LoadBreakSwitches).Include(m => m.Fuses).First();
+
+            _context.Remove(substations);
+        }
     }
 }

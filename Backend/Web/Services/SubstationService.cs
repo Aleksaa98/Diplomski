@@ -59,7 +59,7 @@ namespace Web.Services
                 var sub = await _unitOfWork.Substations.Get(id);
                 if (sub != null)
                 {
-                    _unitOfWork.Substations.Delete(sub);
+                    _unitOfWork.Substations.DeleteSubstation(sub);
                     var result = _unitOfWork.Complete();
                     if (result > 0)
                         return true;
