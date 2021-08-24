@@ -11,10 +11,10 @@ const Substation = () => {
     const activeSub = useSelector((state) => state.allSubstations.active);
     const [openAddMenu,setOpenAddMenu] = useState(false);
     const [substation,setSubstation] = useState({
-      disconnector:[],
-      fuses:[],
-      loadBreakSwitches:[],
-      breakers:[],
+      disconnector:activeSub.disconnector,
+      fuses:activeSub.fuses,
+      loadBreakSwitches:activeSub.loadBreakSwitches,
+      breakers:activeSub.breakers,
       id: activeSub.id,
       mrId: activeSub.mrid,
       name: activeSub.name,
@@ -82,10 +82,10 @@ const handleMenuClose = () => {
 const handleMenuOpen = () => {
   setOpenAddMenu(true);
   setSubstation({
-    disconnector:[],
-    fuses:[],
-    loadBreakSwitches:[],
-    breakers:[],
+    disconnector:activeSub.disconnector,
+    fuses:activeSub.fuses,
+    loadBreakSwitches:activeSub.loadBreakSwitches,
+    breakers:activeSub.breakers,
     id: activeSub.id,
     mrid: activeSub.mrid,
     name: activeSub.name,
@@ -98,10 +98,10 @@ const handleUpdateSubstation = () => {
   dispatch(getAllSubstations());
   dispatch(updateSubstation(substation));
   setSubstation({
-    disconnector:[],
-    fuses:[],
-    loadBreakSwitches:[],
-    breakers:[],
+    disconnector:activeSub.disconnector,
+    fuses:activeSub.fuses,
+    loadBreakSwitches:activeSub.loadBreakSwitches,
+    breakers:activeSub.breakers,
     id: activeSub.id,
     mrid: activeSub.mrid,
     name: activeSub.name,
