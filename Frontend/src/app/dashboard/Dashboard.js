@@ -1,11 +1,12 @@
 import React from 'react';
 //import Slider from "react-slick";
 import { TodoListComponent } from '../apps/TodoList'
+import { useDispatch,useSelector } from "react-redux";
 import {Bar, Pie} from 'react-chartjs-2';
 //import { VectorMap } from "react-jvectormap"
 
 const Dashboard = () => {
-  
+  const substations = useSelector((state) => state.allSubstations.substations);
 
   const data = {
     labels: ["Substation1", "Substation2", "Substation3", "Substation4","Substation5"],

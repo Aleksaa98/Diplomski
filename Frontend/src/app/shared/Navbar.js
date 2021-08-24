@@ -11,6 +11,7 @@ import { addSubstation,getAllSubstations } from '../Redux/actions/substationActi
 const Navbar =  () => {
   const [openAddMenu,setOpenAddMenu] = useState(false);
 	const [substation,setSubstation] = useState({
+    id: 0,
 		mrId: "",
 		name: "",
 		description: "",
@@ -28,13 +29,17 @@ const Navbar =  () => {
 	}
 
   const handleNewSubstation = () => {
-		 dispatch(getAllSubstations());
-		 dispatch(addSubstation(substation));
+    dispatch(getAllSubstations());
+		dispatch(addSubstation(substation));
 		setSubstation({
+    id: 0,
 		mrId: "",
 		name: "",
-		descritpion: "",
+		description: "",
+    state:false
 		});
+    
+    
 	}
 
   const handleInputChange = (event) => {
@@ -79,7 +84,7 @@ const Navbar =  () => {
               <div className="card-body">
                 <h4 className="card-title">New Substation</h4>
                 <p className="card-description"> User can add new substiation here </p>
-                <form className="forms-sample">
+                <form className="forms-sample" onSubmit={handleNewSubstation}>
                   <Form.Group className="row">
                     <label htmlFor="exampleInputMrid" className="col-sm-3 col-form-label">MrID</label>
                     <div className="col-sm-9">
@@ -99,7 +104,7 @@ const Navbar =  () => {
                     </div>
                   </Form.Group>
                   <div className="template-demo">
-                  <button type="button" className="btn btn-primary btn-icon-text" onClick={handleNewSubstation}>
+                  <button type="submit" className="btn btn-primary btn-icon-text" >
                         <i className="mdi mdi-file-check btn-icon-prepend"></i>
                         Submit
                   </button>

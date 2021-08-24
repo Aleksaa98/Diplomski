@@ -1,4 +1,4 @@
-import {allSubstations, updateSubstationCreator,deleteSubstationCreator,addSubstationCreator,changeStateCreator} from "../actionCreators/substationActionsCreator";
+import {allSubstations,getByNameSubCreator, updateSubstationCreator,deleteSubstationCreator,addSubstationCreator,changeStateCreator} from "../actionCreators/substationActionsCreator";
 import axios from "axios";
 
 axios.defaults.baseURL = "http://localhost:56550/api";
@@ -16,26 +16,27 @@ export const getAllSubstations = () => async(dispatch) =>
 
 export const updateSubstation = (substation) => async(dispatch) =>
 {
-    const {data} = await axios.get("/substations").catch((err) =>{
+    await axios.put(`/Substation/${substation.id}`,substation).catch((err) =>{
         console.log("Error",err);
     });
-    dispatch(updateSubstationCreator(data));
+    dispatch(updateSubstationCreator(substation));
 }
 
-export const deleteSubstation = (substation) => async(dispatch) =>
+export const deleteSubstation = (id) => async(dispatch) =>
 {
-    const {data} = await axios.get("/substations").catch((err) =>{
+     await axios.delete(`/Substation/${id}`).catch((err) =>{
         console.log("Error",err);
     });
-    dispatch(deleteSubstationCreator(data));
+    dispatch(deleteSubstationCreator(id));
 }
 
 export const addSubstation = (substation) => async(dispatch) => {
-    // const {data} = await axios.get("/substations").catch((err) =>{
-    //     console.log("Error",err);
-    // });
+    const SubSlati = {name:substation.name, mrid: substation.mrId, description: substation.description, id:substation.id, state:substation.state}
+    await axios.post("/Substation", SubSlati).catch((err) =>{
+        console.log("Error",err);
+    });
     console.log(substation);
-    dispatch(addSubstationCreator(substation));
+    dispatch(addSubstationCreator(SubSlati));
     
 }
 
@@ -43,4 +44,12 @@ export const changeState = (subName,state) => async(dispatch) => {
 
     dispatch(changeStateCreator(subName,state));
     
+}
+
+export const getByNameSub = (subId) => async(dispatch) => {
+    const {data} = await axios.get(`/Substation/${subId}`).catch((err) =>{
+        console.log("Error",err);
+    });
+    console.log(data);
+    dispatch(getByNameSubCreator(data));
 }

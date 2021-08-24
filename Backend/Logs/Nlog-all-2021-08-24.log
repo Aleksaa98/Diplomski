@@ -1,0 +1,7 @@
+2021-08-24 17:42:55.4062|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-24 17:42:55.4297|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-24 17:42:55.4297|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\bozee\Diplomski\Backend\Web
+2021-08-24 17:43:18.8288|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-08-24 17:43:19.8400|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-08-24 18:53:41.6491|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-08-24 18:53:41.6524|ERROR|allfile|Something went wrong: Not valid input!

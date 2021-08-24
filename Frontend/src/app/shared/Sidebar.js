@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { Collapse } from 'react-bootstrap';
 import { Trans } from 'react-i18next';
 import {connect} from 'react-redux';
-import {changeState, getAllSubstations} from '../Redux/actions/substationActions'
+import {changeState, getByNameSub} from '../Redux/actions/substationActions'
 
 
 class Sidebar extends Component {
@@ -26,6 +26,10 @@ class Sidebar extends Component {
       }
   }));
   this.toggleMenuState('novo')
+  }
+
+  updateActiveUser(id){
+    this.props.getByNameSub(id);
   }
 
 
@@ -118,7 +122,7 @@ class Sidebar extends Component {
 							 <li className= 'nav-item menu-items' >
                 
                <div className={ this.props.subtations[index].state ? 'nav-link menu-expanded' : 'nav-link' } onClick={ () => this.updateState(sub.name) } data-toggle="collapse">
-               <Link className="nav-link"  to={{ pathname : `/substation/substation/${sub.id}`}}>
+               <Link className="nav-link"  to= '/substation/Substation' onClick={() => this.updateActiveUser(sub.id)}>
                  <span className="menu-icon">
                    <i className="mdi mdi-houzz-box"></i>
                  </span>
@@ -260,7 +264,6 @@ class Sidebar extends Component {
 
 
 const allSubs = (state) => {
-  getAllSubstations();
     return {
       subtations : state.allSubstations.substations
     }
@@ -269,7 +272,7 @@ const allSubs = (state) => {
 const funkcije = () =>{
   return{
     changeState,
-    getAllSubstations
+    getByNameSub
   }
 }
 

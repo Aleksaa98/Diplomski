@@ -63,3 +63,14 @@
 2021-08-23 20:24:23.5172|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Sladjana\Desktop\Diplomski\Backend\Web
 2021-08-23 20:24:23.9999|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
 2021-08-23 20:24:38.2712|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-08-23 20:33:37.5460|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-08-23 20:33:37.5704|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-08-23 20:33:37.5704|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\bozee\Diplomski\Backend\Web
+2021-08-23 20:33:43.6779|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-08-23 20:33:44.6311|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-08-23 22:11:17.9853|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-08-23 22:11:17.9853|ERROR|allfile|Something went wrong: Substation with mrid='SUB3' or name='SubstationName4' already exists, 409
+2021-08-23 22:38:17.2251|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-08-23 22:38:17.2251|ERROR|allfile|Something went wrong: Substation with mrid='dad' or name='Dsadsada' already exists, 409
+2021-08-23 22:39:20.3306|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-08-23 22:39:20.3306|ERROR|allfile|Something went wrong: Substation with mrid='dadadadadada' or name='Mladen' already exists, 409

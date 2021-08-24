@@ -2,6 +2,7 @@ import { ActionTypes } from "../constants/actions-types";
 
 const initialState = {
     substations: [],
+    active: { name: '', mrid: '', description: '', breakers: [], fuses: [], loadBreakSwitches: [], disconnector: [] }
 }
 
 
@@ -12,33 +13,51 @@ export const substationReducer = (state = initialState, action) => {
                 ...state.substations,
                 action.payload
             ]
-            console.log(newSubstations);
             state.substations = newSubstations;
+            console.log(state.substations);
             return {
                 substations: state.substations,
+                active: state.active
             };
         case ActionTypes.ALL_SUBSTATIONS:
-            return{
+            console.log(action.payload);
+            return {
                 substations: action.payload,
+                active: state.active
             }
         case ActionTypes.REMOVE_SELECTED_SUBSTATION:
-            return{
-                substations: action.payload,
+            const newSubs = state.substations.filter((item) => item.id !== action.payload)
+            return {
+                substations: newSubs,
+                active: { name: '', breakers: [] }
             }
         case ActionTypes.UPDATE_SUBSTATION:
-            return{
-                substations: action.payload,
+            const changeId = state.substations.findIndex(
+                (item) => item.id === action.payload.id
+            );
+            state.substations[changeId] = action.payload;
+            return {
+                substations: state.substations,
+                active: action.payload
             }
         case ActionTypes.CHANGE_STATE:
-            const changeId = state.substations.findIndex(
+            const changeName = state.substations.findIndex(
                 (item) => item.name === action.payload
             );
-            
-            state.substations[changeId].state = action.state;
 
-            return{
+            state.substations[changeName].state = action.state;
+
+            return {
                 substations: state.substations,
+                active: state.active
             }
+        case ActionTypes.GET_BY_NAME:
+            console.log(action.payload);
+            return {
+                substations: state.substations,
+                active: action.payload
+            }
+
         default:
             return state;
     }
