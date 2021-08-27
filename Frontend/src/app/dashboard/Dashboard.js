@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect } from 'react';
 //import Slider from "react-slick";
 import { TodoListComponent } from '../apps/TodoList'
 import { useDispatch,useSelector } from "react-redux";
@@ -8,11 +8,79 @@ import {Bar, Pie} from 'react-chartjs-2';
 const Dashboard = () => {
   const substations = useSelector((state) => state.allSubstations.substations);
 
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    //fillData()
+  },[]);
+
+const disconnectorCount= () => {
+  var count = 0;
+
+  substations.forEach(sub => {
+    count += sub.disconnector.length;
+  });
+
+  return count;
+}
+
+const fuseCount= () => {
+  var count = 0;
+
+  substations.forEach(sub => {
+    count += sub.fuses.length;
+  });
+
+  return count;
+}
+
+const loadBreakSwitchCount= () => {
+  var count = 0;
+
+  substations.forEach(sub => {
+    count += sub.loadBreakSwitches.length;
+  });
+
+  return count;
+}
+
+const breakerCount= () => {
+  var count = 0;
+
+  substations.forEach(sub => {
+    count += sub.breakers.length;
+  });
+
+  return count;
+}
+
+const fillData = () => {
+  const nesto = [];
+   substations.forEach(sub => {
+ 
+     nesto.push(sub.name);
+     //data.datasets[0].data.push(sub.disconnector.length + sub.fuses.length + sub.loadBreakSwitches.length  + sub.breakers.length );
+   });
+ 
+   return nesto;
+ }
+
+ const fillNumbers = () => {
+  const nesto = [];
+   substations.forEach(sub => {
+     nesto.push(sub.disconnector.length + sub.fuses.length + sub.loadBreakSwitches.length  + sub.breakers.length );
+   });
+ 
+   return nesto;
+ }
+
+
+
   const data = {
-    labels: ["Substation1", "Substation2", "Substation3", "Substation4","Substation5"],
+    labels: fillData(),
     datasets: [{
-      label: '# of Votes',
-      data: [10, 19, 3, 5, 12],
+      label: '# of Switches',
+      data: fillNumbers(),
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -59,9 +127,11 @@ const options = {
 }
 
 
+ 
+
 const doughnutPieData = {
   datasets: [{
-    data: [23, 12, 15, 30],
+    data: [disconnectorCount(), fuseCount(), loadBreakSwitchCount(), breakerCount()],
     backgroundColor: [
       'rgba(54, 162, 235, 0.5)',
       'rgba(255, 99, 132, 0.5)',
@@ -97,7 +167,7 @@ const doughnutPieOptions = {
   }
 };
 
- 
+
   // const toggleProBanner = () => {
   //   document.querySelector('.proBanner').classList.toggle("hide");
   // }
@@ -118,7 +188,7 @@ const doughnutPieOptions = {
                 <div className="row">
                   <div className="col-8 col-sm-12 col-xl-8 my-auto">
                     <div className="d-flex d-sm-block d-md-flex align-items-center">
-                      <h2 className="mb-0">23</h2>
+                      <h2 className="mb-0">{disconnectorCount()}</h2>
                       <p className="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
                     </div>
                     <h6 className="text-muted font-weight-normal"> Substation1 has the most</h6>
@@ -137,7 +207,7 @@ const doughnutPieOptions = {
                 <div className="row">
                   <div className="col-8 col-sm-12 col-xl-8 my-auto">
                     <div className="d-flex d-sm-block d-md-flex align-items-center">
-                      <h2 className="mb-0">12</h2>
+                      <h2 className="mb-0">{fuseCount()}</h2>
                       <p className="text-success ml-2 mb-0 font-weight-medium">+8.3%</p>
                     </div>
                     <h6 className="text-muted font-weight-normal"> Substation3 has the most</h6>
@@ -156,7 +226,7 @@ const doughnutPieOptions = {
                 <div className="row">
                   <div className="col-8 col-sm-12 col-xl-8 my-auto">
                     <div className="d-flex d-sm-block d-md-flex align-items-center">
-                      <h2 className="mb-0">15</h2>
+                      <h2 className="mb-0">{loadBreakSwitchCount()}</h2>
                       <p className="text-danger ml-2 mb-0 font-weight-medium">-2.1% </p>
                     </div>
                     <h6 className="text-muted font-weight-normal"> Substation2 has the most</h6>
@@ -175,7 +245,7 @@ const doughnutPieOptions = {
                 <div className="row">
                   <div className="col-8 col-sm-12 col-xl-8 my-auto">
                     <div className="d-flex d-sm-block d-md-flex align-items-center">
-                      <h2 className="mb-1">30</h2>
+                      <h2 className="mb-1">{breakerCount()}</h2>
                       <p className="text-danger ml-2 mb-0 font-weight-medium">-2.1% </p>
                     </div>
                     <h6 className="text-muted font-weight-normal"> Substation1 has the most</h6>

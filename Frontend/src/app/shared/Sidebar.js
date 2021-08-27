@@ -3,14 +3,15 @@ import { Link, withRouter } from 'react-router-dom';
 import { Collapse } from 'react-bootstrap';
 import { Trans } from 'react-i18next';
 import {connect} from 'react-redux';
-import {changeState, getByNameSub} from '../Redux/actions/substationActions'
+import {changeState, getByNameSub,getAllSubstations} from '../Redux/actions/substationActions'
 
 
 class Sidebar extends Component {
 
   state = {};
-
+  
   updateState(name){
+    console.log('ssssssssssssssssssssssssss');
     this.props.subtations.forEach((obj => {
       if(obj.name === name)
       {
@@ -30,6 +31,10 @@ class Sidebar extends Component {
 
   updateActiveUser(id){
     this.props.getByNameSub(id);
+  }
+
+  updateAllDashBoard(){
+    this.props.getAllSubstations();
   }
 
 
@@ -136,7 +141,7 @@ class Sidebar extends Component {
                <Collapse in={ this.props.subtations[index].state }>
                  <div>
                    <ul className="nav flex-column sub-menu">
-                   <li className="nav-item"> <Link className={ this.isPathActive('/dashboard') ? 'nav-link active' : 'nav-link' } to="/dashboard">
+                   <li className="nav-item"> <Link className={ this.isPathActive('/substation/disconnector') ? 'nav-link active' : 'nav-link' } to="/substation/disconnector">
                    <span className="menu-icon"><i className="mdi mdi-flash-off"></i></span><Trans>Disconnector</Trans></Link></li>
                   <li className="nav-item"> <Link className={ this.isPathActive('/substation/nzm') ? 'nav-link active' : 'nav-link' } to="/substation/nzm">
                    <span className="menu-icon"><i className="mdi mdi-image-broken-variant"></i></span><Trans>Fuse</Trans></Link></li>
@@ -272,6 +277,7 @@ const allSubs = (state) => {
 const funkcije = () =>{
   return{
     changeState,
+    getAllSubstations,
     getByNameSub
   }
 }

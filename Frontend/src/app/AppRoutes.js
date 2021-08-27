@@ -10,6 +10,7 @@ const Dropdowns = lazy(() => import('./basic-ui/Dropdowns'));
 const Typography = lazy(() => import('./basic-ui/Typography'));
 
 const Substation = lazy(() => import('./substation/Substation'));
+const Disconnector = lazy(() => import('./switch/Disconnector'));
 
 const BasicElements = lazy(() => import('./form-elements/BasicElements'));
 
@@ -31,6 +32,7 @@ class AppRoutes extends Component {
           <Route exact path="/dashboard" component={ Dashboard } />
 
           <Route path="/substation/substation" component={ Substation } />
+          <Route path="/substation/disconnector" component={ Disconnector } />
           <Route path="/substation/nzm" component={ Typography } />
 
           <Route path="/basic-ui/buttons" component={ Buttons } />

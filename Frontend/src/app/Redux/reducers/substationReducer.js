@@ -29,7 +29,7 @@ export const substationReducer = (state = initialState, action) => {
             const newSubs = state.substations.filter((item) => item.id !== action.payload)
             return {
                 substations: newSubs,
-                active: { name: '', breakers: [] }
+                active: { name: '', mrid: '', description: '', breakers: [], fuses: [], loadBreakSwitches: [], disconnector: [] }
             }
         case ActionTypes.UPDATE_SUBSTATION:
             const changeId = state.substations.findIndex(
@@ -52,10 +52,12 @@ export const substationReducer = (state = initialState, action) => {
                 active: state.active
             }
         case ActionTypes.GET_BY_NAME:
-            console.log(action.payload);
+            const activeId =state.substations.findIndex(
+                (item) => item.id === action.payload.id
+            );
             return {
                 substations: state.substations,
-                active: action.payload
+                active: state.substations[activeId]
             }
 
         default:
