@@ -41,7 +41,7 @@ namespace Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(SubstationRequest substation)
         {
-            var substationCreated = await _service.CreateNewSubstation(substation);
+            var substationCreated = await _service.CreateNewSubstationAndSwitches(substation);
             if (substationCreated)
                 return Ok("Substation created successfull");
             else

@@ -42,5 +42,9 @@ namespace Repository
             _context.Entry(entity).CurrentValues.SetValues(newEntity);
         }
 
+        public async Task AddList(List<T> entity)
+        {
+            await _context.Set<T>().AddRangeAsync(entity);
+        }
     }
 }

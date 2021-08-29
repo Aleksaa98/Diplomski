@@ -11,6 +11,7 @@ namespace Web.Services.Interfaces
     public interface ISubstationService
     {
         Task<bool> CreateNewSubstation(SubstationRequest substation);
+        Task<bool> CreateNewSubstationAndSwitches(SubstationRequest substation);
         Task<IEnumerable<SubstationResponse>> GetAllSubstations();
         Task<SubstationResponse> GetSubstationById(int id);
         Task<bool> UpdateSubstation(int id, SubstationRequest substation);

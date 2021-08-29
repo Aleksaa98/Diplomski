@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Domain.Core;
 using Domain.Interfaces;
+using Domain.Wires;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -142,6 +143,53 @@ namespace Web.Services
                 return false;
 
             return true;
+        }
+
+        public async Task<bool> CreateNewSubstationAndSwitches(SubstationRequest substation)
+        {
+            if (Validation(substation))
+            {
+                if (_unitOfWork.Substations.GetByMridAndName(substation.Mrid, substation.Name))
+                {
+                    throw new AlreadyExistsException("Substation", substation.Mrid, substation.Name);
+                }
+                else
+                {
+                    var newSubstation = _mapper.Map<Substation>(substation);
+
+                    List<Disconnector> disconnectors = (List<Disconnector>)newSubstation.Disconnector;
+                    List<Breaker> breakers = (List<Breaker>)newSubstation.Breakers;
+                    List<Fuse> fuses = (List<Fuse>)newSubstation.Fuses;
+                    List<LoadBreakSwitch> loadBreakSwitches = (List<LoadBreakSwitch>)newSubstation.LoadBreakSwitches;
+                    Substation sub = new Substation()
+                    {
+                        Id = newSubstation.Id,
+                        Mrid = newSubstation.Mrid,
+                        Name = newSubstation.Name,
+                        Description = newSubstation.Description,
+                        State = newSubstation.State
+                    };
+
+                    await _unitOfWork.Substations.Add(sub);
+                    await _unitOfWork.Disconnector.AddList(disconnectors);
+                    await _unitOfWork.Breaker.AddList(breakers);
+                    await _unitOfWork.Fuse.AddList(fuses);
+                    await _unitOfWork.LoadBreakSwitch.AddList(loadBreakSwitches);
+
+                    var result = _unitOfWork.Complete();
+                    if (result > 0)
+                        return true;
+                    else
+                    {
+                        throw new Exception();
+                    }
+                }
+
+            }
+            else
+            {
+                throw new ValidationException();
+            }
         }
     }
 }

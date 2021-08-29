@@ -10,6 +10,7 @@ namespace Domain.Interfaces
         Task<T> Get(int id);
         Task<IEnumerable<T>> GetAll();
         Task Add(T entity);
+        Task AddList(List<T> entity);
         void Delete(T entity);
         void Update(T entity, T newEntity);
     }
