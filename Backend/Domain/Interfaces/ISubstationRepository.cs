@@ -11,6 +11,5 @@ namespace Domain.Interfaces
         bool GetByMridAndName(string mrid, string name);
         bool CheckIfEntityExists(int id);
         Task<IEnumerable<Substation>> GetAllSubstation();
-        void DeleteSubstation(Substation entity);
     }
 }
