@@ -11,6 +11,9 @@ const Typography = lazy(() => import('./basic-ui/Typography'));
 
 const Substation = lazy(() => import('./substation/Substation'));
 const Disconnector = lazy(() => import('./switch/Disconnector'));
+const Fuse = lazy(() => import('./switch/Fuse'));
+const Breaker = lazy(() => import('./switch/Breaker'));
+const LoadBreakSwitch = lazy(() => import('./switch/Load'));
 
 const BasicElements = lazy(() => import('./form-elements/BasicElements'));
 
@@ -33,7 +36,9 @@ class AppRoutes extends Component {
 
           <Route path="/substation/substation" component={ Substation } />
           <Route path="/substation/disconnector" component={ Disconnector } />
-          <Route path="/substation/nzm" component={ Typography } />
+          <Route path="/substation/fuse" component={ Fuse } />
+          <Route path="/substation/loadBreakSwitch" component={ LoadBreakSwitch } />
+          <Route path="/substation/breaker" component={ Breaker } />
 
           <Route path="/basic-ui/buttons" component={ Buttons } />
           <Route path="/basic-ui/dropdowns" component={ Dropdowns } />

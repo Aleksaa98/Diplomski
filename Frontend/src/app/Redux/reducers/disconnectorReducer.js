@@ -32,7 +32,7 @@ export const disconnectorReducer = (state = initialState, action) => {
             );
             state.disconnectors[changeId] = action.payload;
             return {
-                substations: state.disconnectors,
+                disconnectors: state.disconnectors,
             }
         default:
             return state;

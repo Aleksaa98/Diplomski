@@ -23,10 +23,10 @@ export const updateDisconnectorCreator = (disconnector) => {
     }
 }
 
-export const deleteDisconnectorCreator = (disconnectors) => {
+export const deleteDisconnectorCreator = (disconnector) => {
     return{
         type:ActionTypes.REMOVE_SELECTED_DISCONNECTOR,
-        payload: disconnectors
+        payload: disconnector
     }
 }
 

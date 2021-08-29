@@ -1,17 +1,14 @@
 import React, { useEffect, useState, lazy } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { updateSubstation, getAllSubstations, deleteSubstation } from '../Redux/actions/substationActions';
-import { addDisconnector } from '../Redux/actions/disconnectorActions';
-import { Doughnut } from 'react-chartjs-2';
-import { Switch, Link, Route, Redirect } from 'react-router-dom';
+import { addBreaker } from '../Redux/actions/breakerActions';
 import { Form } from 'react-bootstrap';
 import Dialog from '@material-ui/core/Dialog';
 
 
-const Disconnector = () => {
+const Breaker = () => {
     const activeSub = useSelector((state) => state.allSubstations.active);
     const [openAddMenu, setOpenAddMenu] = useState(false);
-    const [disconnector, setDisconnector] = useState({
+    const [breaker, setBreaker] = useState({
         id: 0,
         mrId: "",
         name: "",
@@ -25,8 +22,8 @@ const Disconnector = () => {
         Retained: "",
         SwitchOnCount: "",
         SubstationId: "",
-        ReactiveBreakingCurrent: ""
-
+        InTransitTime: "",
+        RatedCurrent: "",
     })
 
     const dispatch = useDispatch();
@@ -39,10 +36,10 @@ const Disconnector = () => {
         setOpenAddMenu(false);
     }
 
-    const handleNewDisconnector = () => {
+    const handleNewBreaker = () => {
         console.log('dasdssssssssssssssssssssssssss')
-        dispatch(addDisconnector(disconnector));
-        setDisconnector({
+        dispatch(addBreaker(breaker));
+        setBreaker({
             id: 0,
             mrId: "",
             name: "",
@@ -56,13 +53,14 @@ const Disconnector = () => {
             Retained: "",
             SwitchOnCount: "",
             SubstationId: "",
-            ReactiveBreakingCurrent: ""
+            InTransitTime: "",
+            RatedCurrent: "",
         });
     }
 
     const handleInputChange = (event) => {
-        setDisconnector({
-            ...disconnector,
+        setBreaker({
+            ...breaker,
             [event.target.name]: event.target.value,
         });
     }
@@ -70,14 +68,14 @@ const Disconnector = () => {
 
     return (
         <div>
-            <button type="button" className="btn btn-inverse-primary btn-lg" onClick={() => setOpenAddMenu(true)}>+NewDisconnector</button>
+            <button type="button" className="btn btn-inverse-warning btn-lg" onClick={() => setOpenAddMenu(true)}>+NewBreaker</button>
             <Dialog open={openAddMenu} onClose={() => setOpenAddMenu(!openAddMenu)} >
                 <div className="col-md-20  stretch-card">
                     <div className="card">
                         <div className="card-body">
-                            <h4 className="card-title">New Disconnector</h4>
-                            <p className="card-description"> User can add new Disconnector here </p>
-                            <form className="forms-sample" onSubmit={handleNewDisconnector} >
+                            <h4 className="card-title">New Breaker</h4>
+                            <p className="card-description"> User can add new breaker here </p>
+                            <form className="forms-sample" onSubmit={handleNewBreaker} >
                                 <div className='row'>
                                     <Form.Group className="row">
                                         <label htmlFor="exampleInputMrid" className="col-sm-3 col-form-label">MrID</label>
@@ -109,6 +107,7 @@ const Disconnector = () => {
                                             <Form.Control type="number" className="form-control" id="exampleInputDescription" placeholder="failureRate" name="failureRate" onChange={handleInputChange} />
                                         </div>
                                     </Form.Group>
+                               
                                     <Form.Group className="row">
                                         <label htmlFor="exampleInputDescription" className="col-sm-3 col-form-label">Desc</label>
                                         <div className="col-sm-9">
@@ -156,9 +155,16 @@ const Disconnector = () => {
                                     <Form.Group className="row">
                                         <label htmlFor="exampleInputDescription" className="col-sm-3 col-form-label">Desc</label>
                                         <div className="col-sm-9">
-                                            <Form.Control type="number" className="form-control" id="exampleInputDescription" placeholder="ReactiveBreakingCurrent" name="ReactiveBreakingCurrent" onChange={handleInputChange} />
+                                            <Form.Control type="number" className="form-control" id="exampleInputDescription" placeholder="InTransitTime" name="InTransitTime" onChange={handleInputChange} />
                                         </div>
                                     </Form.Group>
+                                    <Form.Group className="row">
+                                        <label htmlFor="exampleInputDescription" className="col-sm-3 col-form-label">Desc</label>
+                                        <div className="col-sm-9">
+                                            <Form.Control type="number" className="form-control" id="exampleInputDescription" placeholder="RatedCurrent" name="RatedCurrent" onChange={handleInputChange} />
+                                        </div>
+                                    </Form.Group>
+
                                 </div>
                                 <div className="template-demo">
                                     <button type="submit" className="btn btn-primary btn-icon-text" >
@@ -183,4 +189,4 @@ const Disconnector = () => {
 
 }
 
-export default Disconnector;
+export default Breaker;

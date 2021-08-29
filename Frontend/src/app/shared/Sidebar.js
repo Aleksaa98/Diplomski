@@ -143,11 +143,11 @@ class Sidebar extends Component {
                    <ul className="nav flex-column sub-menu">
                    <li className="nav-item"> <Link className={ this.isPathActive('/substation/disconnector') ? 'nav-link active' : 'nav-link' } to="/substation/disconnector">
                    <span className="menu-icon"><i className="mdi mdi-flash-off"></i></span><Trans>Disconnector</Trans></Link></li>
-                  <li className="nav-item"> <Link className={ this.isPathActive('/substation/nzm') ? 'nav-link active' : 'nav-link' } to="/substation/nzm">
+                  <li className="nav-item"> <Link className={ this.isPathActive('/substation/fuse') ? 'nav-link active' : 'nav-link' } to="/substation/fuse">
                    <span className="menu-icon"><i className="mdi mdi-image-broken-variant"></i></span><Trans>Fuse</Trans></Link></li>
-                  <li className="nav-item"> <Link className={ this.isPathActive('/substation/nzm') ? 'nav-link active' : 'nav-link' } to="/substation/nzm">
+                  <li className="nav-item"> <Link className={ this.isPathActive('/substation/loadBreakSwitch') ? 'nav-link active' : 'nav-link' } to="/substation/loadBreakSwitch">
                    <span className="menu-icon"><i className="mdi mdi-security-network"></i></span><Trans>LoadBreakSwitch</Trans></Link></li>
-                  <li className="nav-item"> <Link className={ this.isPathActive('/substation/nzm') ? 'nav-link active' : 'nav-link' } to="/substation/nzm">
+                  <li className="nav-item"> <Link className={ this.isPathActive('/substation/breaker') ? 'nav-link active' : 'nav-link' } to="/substation/breaker">
                    <span className="menu-icon"><i className="mdi mdi-switch"></i></span><Trans>Breaker</Trans></Link></li>
                    </ul>
                  </div>
