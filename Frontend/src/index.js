@@ -5,12 +5,15 @@ import App from './app/App';
 import './i18n';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
-import store from './app/Redux/store'
+import {store, persistor} from './app/Redux/store'
+import {PersistGate} from 'redux-persist/integration/react'
 
 ReactDOM.render(
   <BrowserRouter basename="/demo/corona-react-free/template/demo_1/preview">
     <Provider store={store}>
-    <App />
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
     </Provider>
   </BrowserRouter>
 , document.getElementById('root'));
