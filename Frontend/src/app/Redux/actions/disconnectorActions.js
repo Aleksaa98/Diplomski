@@ -32,11 +32,10 @@ export const deleteDisconnector = (id) => async(dispatch) =>
 
 export const addDisconnector = (discnonnector) => async(dispatch) => {
    console.log(discnonnector);
-    const disc = {mrId:'FASS21',name:'DADADA',description:'fsa',costPerUnitL:22,failureRate:23,IsUnderground:true,Phases:1,RatedVoltage:1,NormalOpen:true,Retained:true,SwitchOnCount:1,SubstationId:30,ReactiveBreakingCurrent:1}
-    await axios.post("/Disconnector", disc).catch((err) =>{
+    await axios.post("/Disconnector", discnonnector).catch((err) =>{
         console.log("Error",err);
     });
 
-    dispatch(addDisconnectorCreator(disc));
+    dispatch(addDisconnectorCreator(discnonnector));
     
 }

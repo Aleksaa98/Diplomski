@@ -31,11 +31,10 @@ export const deleteFuse = (id) => async(dispatch) =>
 
 export const addFuse = (fuse) => async(dispatch) => {
    console.log(fuse);
-    const newFuse = {mrId:'GFAS21',name:'NazivNeki',description:'fsa',costPerUnitL:22,failureRate:23,IsUnderground:true,Phases:1,RatedVoltage:1,NormalOpen:true,Retained:true,SwitchOnCount:1,SubstationId:30,RatingCurrent:23,Cutout:true,MaxFaultCurrent:21}
-    await axios.post("/Fuse", newFuse).catch((err) =>{
+    await axios.post("/Fuse", fuse).catch((err) =>{
         console.log("Error",err);
     });
 
-    dispatch(addFuseCreator(newFuse));
+    dispatch(addFuseCreator(fuse));
     
 }

@@ -31,11 +31,10 @@ export const deleteBreaker = (id) => async(dispatch) =>
 
 export const addBreaker = (breaker) => async(dispatch) => {
    console.log(breaker);
-    const newBreaker = {mrId:'fasda12',name:'NSDADA',description:'fsa',costPerUnitL:22,failureRate:23,IsUnderground:true,Phases:1,RatedVoltage:1,NormalOpen:true,Retained:true,SwitchOnCount:1,SubstationId:28,InTransitTime:12,RatedCurrent:45}
-    await axios.post("/Breaker", newBreaker).catch((err) =>{
+    await axios.post("/Breaker", breaker).catch((err) =>{
         console.log("Error",err);
     });
 
-    dispatch(addBreakerCreator(newBreaker));
+    dispatch(addBreakerCreator(breaker));
     
 }

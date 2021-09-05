@@ -31,11 +31,10 @@ export const deleteLoad = (id) => async(dispatch) =>
 
 export const addLoad = (load) => async(dispatch) => {
    console.log(load);
-    const newLoad = {mrId:'1ff12',name:'DrugiNaziv',description:'fsa',costPerUnitL:22,failureRate:23,IsUnderground:true,Phases:1,RatedVoltage:1,NormalOpen:true,Retained:true,SwitchOnCount:1,SubstationId:28,RatedCurrent:21}
-    await axios.post("/LoadBreakSwitch", newLoad).catch((err) =>{
+    await axios.post("/LoadBreakSwitch", load).catch((err) =>{
         console.log("Error",err);
     });
 
-    dispatch(addLoadCreator(newLoad));
+    dispatch(addLoadCreator(load));
     
 }
