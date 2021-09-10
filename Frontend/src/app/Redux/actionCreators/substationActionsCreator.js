@@ -46,3 +46,10 @@ export const getByNameSubCreator = (substution) => {
     }
 }
 
+export const updateActiveCreator = (active) => {
+    return{
+        type:ActionTypes.UPDATE_ACTIVE,
+
+        payload: active
+    }
+}

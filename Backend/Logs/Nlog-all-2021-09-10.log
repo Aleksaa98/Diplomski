@@ -1,0 +1,471 @@
+2021-09-10 00:30:27.2693|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-10 00:30:27.2939|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-10 00:30:27.2939|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-10 00:30:45.4141|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-10 00:30:46.3672|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-10 00:34:54.8772|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-10 00:34:54.9015|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-10 00:34:54.9015|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-10 00:35:01.2282|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-10 00:35:02.1664|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-10 00:35:33.2346|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-10 00:35:33.2577|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-10 00:35:33.2577|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-10 00:35:33.2739|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-10 00:35:34.7038|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-10 00:40:16.0680|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-10 00:40:16.0915|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-10 00:40:16.0915|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-10 00:40:21.4170|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-10 00:40:22.3603|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-10 00:40:28.6230|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-10 00:40:28.6444|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-10 00:40:28.6467|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-10 00:40:28.6467|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-10 00:40:44.1064|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-10 00:40:44.1297|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-10 00:40:44.1330|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-10 00:40:47.6657|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-10 00:40:48.5907|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-10 01:11:47.6642|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Substations]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2021-09-10 01:11:47.7068|ERROR|Microsoft.EntityFrameworkCore.Update|An exception occurred in the database while saving changes for context type 'Context.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Disconnectors_Substations_SubstationId". The conflict occurred in database "SubstationDB", table "dbo.Disconnectors", column 'SubstationId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:43c7953d-ca82-4920-8ce0-3eaada53592a
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2021-09-10 01:11:47.7752|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:11:47.7752|ERROR|allfile|Something went wrong: Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Disconnectors_Substations_SubstationId". The conflict occurred in database "SubstationDB", table "dbo.Disconnectors", column 'SubstationId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:43c7953d-ca82-4920-8ce0-3eaada53592a
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Repository.UnitOfWork.Complete() in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Repository\UnitOfWork.cs:line 33
+   at Web.Services.SubstationService.Delete(Int32 id) in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web\Services\SubstationService.cs:line 64
+   at Web.Controllers.SubstationController.Delete(Int32 id) in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web\Controllers\SubstationController.cs:line 66
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-09-10 01:11:59.3149|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Substations]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2021-09-10 01:11:59.3254|ERROR|Microsoft.EntityFrameworkCore.Update|An exception occurred in the database while saving changes for context type 'Context.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Breakers_Substations_SubstationId". The conflict occurred in database "SubstationDB", table "dbo.Breakers", column 'SubstationId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:43c7953d-ca82-4920-8ce0-3eaada53592a
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2021-09-10 01:11:59.3824|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:11:59.3824|ERROR|allfile|Something went wrong: Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Breakers_Substations_SubstationId". The conflict occurred in database "SubstationDB", table "dbo.Breakers", column 'SubstationId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:43c7953d-ca82-4920-8ce0-3eaada53592a
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Repository.UnitOfWork.Complete() in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Repository\UnitOfWork.cs:line 33
+   at Web.Services.SubstationService.Delete(Int32 id) in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web\Services\SubstationService.cs:line 64
+   at Web.Controllers.SubstationController.Delete(Int32 id) in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web\Controllers\SubstationController.cs:line 66
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-09-10 01:24:33.4791|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:33.4791|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:33.4791|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:33.4791|ERROR|allfile|Something went wrong: Substation with Id=1005 don't exists, 404
+2021-09-10 01:24:33.4791|ERROR|allfile|Something went wrong: Substation with Id=1006 don't exists, 404
+2021-09-10 01:24:33.4791|ERROR|allfile|Something went wrong: Substation with Id=4 don't exists, 404
+2021-09-10 01:24:33.4791|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:33.4791|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:33.4791|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:33.4791|ERROR|allfile|Something went wrong: Substation with Id=1006 don't exists, 404
+2021-09-10 01:24:33.4791|ERROR|allfile|Something went wrong: Substation with Id=4 don't exists, 404
+2021-09-10 01:24:33.4791|ERROR|allfile|Something went wrong: Substation with Id=1005 don't exists, 404
+2021-09-10 01:24:33.6133|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:33.6133|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:33.6133|ERROR|allfile|Something went wrong: Substation with Id=1009 don't exists, 404
+2021-09-10 01:24:33.6158|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:33.6158|ERROR|allfile|Something went wrong: Substation with Id=1008 don't exists, 404
+2021-09-10 01:24:33.6158|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:33.6158|ERROR|allfile|Something went wrong: Substation with Id=1010 don't exists, 404
+2021-09-10 01:24:33.6158|ERROR|allfile|Something went wrong: Substation with Id=1008 don't exists, 404
+2021-09-10 01:24:33.6158|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:33.6158|ERROR|allfile|Something went wrong: Substation with Id=1010 don't exists, 404
+2021-09-10 01:24:33.6500|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:33.6500|ERROR|allfile|Something went wrong: Substation with Id=1009 don't exists, 404
+2021-09-10 01:24:53.4823|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:53.4823|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:53.4949|ERROR|allfile|Something went wrong: Substation with Id=3 don't exists, 404
+2021-09-10 01:24:53.4949|ERROR|allfile|Something went wrong: Substation with Id=1007 don't exists, 404
+2021-09-10 01:24:53.5683|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:53.5754|ERROR|allfile|Something went wrong: Substation with Id=1013 don't exists, 404
+2021-09-10 01:24:53.5860|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:53.5860|ERROR|allfile|Something went wrong: Substation with Id=1016 don't exists, 404
+2021-09-10 01:24:53.6251|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:53.6251|ERROR|allfile|Something went wrong: Substation with Id=1019 don't exists, 404
+2021-09-10 01:24:53.6251|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:53.6251|ERROR|allfile|Something went wrong: Substation with Id=1018 don't exists, 404
+2021-09-10 01:24:53.6251|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:53.6315|ERROR|allfile|Something went wrong: Substation with Id=1017 don't exists, 404
+2021-09-10 01:24:53.6315|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:53.6315|ERROR|allfile|Something went wrong: Substation with Id=1020 don't exists, 404
+2021-09-10 01:24:53.6653|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:53.6653|ERROR|allfile|Something went wrong: Substation with Id=1024 don't exists, 404
+2021-09-10 01:24:56.7033|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:56.7033|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:56.7033|ERROR|allfile|Something went wrong: Substation with Id=1004 don't exists, 404
+2021-09-10 01:24:56.7136|ERROR|allfile|Something went wrong: Substation with Id=5 don't exists, 404
+2021-09-10 01:24:56.7652|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:56.7730|ERROR|allfile|Something went wrong: Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException: Database operation expected to affect 1 row(s) but actually affected 0 row(s). Data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagation(Int32 commandIndex, RelationalDataReader reader)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.Consume(RelationalDataReader reader)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Repository.UnitOfWork.Complete() in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Repository\UnitOfWork.cs:line 33
+   at Web.Services.LoadBreakSwitchService.Delete(Int32 id) in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web\Services\LoadBreakSwitchService.cs:line 127
+   at Web.Controllers.LoadBreakSwitchController.Delete(Int32 id) in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web\Controllers\LoadBreakSwitchController.cs:line 65
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-09-10 01:24:56.7730|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:56.7730|ERROR|allfile|Something went wrong: Substation with Id=1012 don't exists, 404
+2021-09-10 01:24:56.8111|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:56.8111|ERROR|allfile|Something went wrong: Substation with Id=1021 don't exists, 404
+2021-09-10 01:24:56.8268|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:56.8268|ERROR|allfile|Something went wrong: Substation with Id=1014 don't exists, 404
+2021-09-10 01:24:56.8681|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:56.8681|ERROR|allfile|Something went wrong: Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException: Database operation expected to affect 1 row(s) but actually affected 0 row(s). Data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagation(Int32 commandIndex, RelationalDataReader reader)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.Consume(RelationalDataReader reader)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Repository.UnitOfWork.Complete() in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Repository\UnitOfWork.cs:line 33
+   at Web.Services.LoadBreakSwitchService.Delete(Int32 id) in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web\Services\LoadBreakSwitchService.cs:line 127
+   at Web.Controllers.LoadBreakSwitchController.Delete(Int32 id) in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web\Controllers\LoadBreakSwitchController.cs:line 65
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-09-10 01:24:56.8681|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:56.8681|ERROR|allfile|Something went wrong: Substation with Id=1023 don't exists, 404
+2021-09-10 01:24:56.8681|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:56.8814|ERROR|allfile|Something went wrong: Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException: Database operation expected to affect 1 row(s) but actually affected 0 row(s). Data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagation(Int32 commandIndex, RelationalDataReader reader)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.Consume(RelationalDataReader reader)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Repository.UnitOfWork.Complete() in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Repository\UnitOfWork.cs:line 33
+   at Web.Services.LoadBreakSwitchService.Delete(Int32 id) in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web\Services\LoadBreakSwitchService.cs:line 127
+   at Web.Controllers.LoadBreakSwitchController.Delete(Int32 id) in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web\Controllers\LoadBreakSwitchController.cs:line 65
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-09-10 01:24:59.0617|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.0617|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.0617|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.0617|ERROR|allfile|Something went wrong: Substation with Id=3 don't exists, 404
+2021-09-10 01:24:59.0617|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.0617|ERROR|allfile|Something went wrong: Substation with Id=1007 don't exists, 404
+2021-09-10 01:24:59.0617|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.0617|ERROR|allfile|Something went wrong: Substation with Id=1007 don't exists, 404
+2021-09-10 01:24:59.0617|ERROR|allfile|Something went wrong: Substation with Id=3 don't exists, 404
+2021-09-10 01:24:59.0682|ERROR|allfile|Something went wrong: Substation with Id=1013 don't exists, 404
+2021-09-10 01:24:59.0617|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.0682|ERROR|allfile|Something went wrong: Substation with Id=1016 don't exists, 404
+2021-09-10 01:24:59.2136|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.2136|ERROR|allfile|Something went wrong: Substation with Id=1017 don't exists, 404
+2021-09-10 01:24:59.2136|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.2136|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.2136|ERROR|allfile|Something went wrong: Substation with Id=1019 don't exists, 404
+2021-09-10 01:24:59.2136|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.2136|ERROR|allfile|Something went wrong: Substation with Id=1018 don't exists, 404
+2021-09-10 01:24:59.2136|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.2136|ERROR|allfile|Something went wrong: Substation with Id=1013 don't exists, 404
+2021-09-10 01:24:59.2136|ERROR|allfile|Something went wrong: Substation with Id=1016 don't exists, 404
+2021-09-10 01:24:59.2136|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.2136|ERROR|allfile|Something went wrong: Substation with Id=1017 don't exists, 404
+2021-09-10 01:24:59.3384|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.3384|ERROR|allfile|Something went wrong: Substation with Id=1018 don't exists, 404
+2021-09-10 01:24:59.3553|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.3553|ERROR|allfile|Something went wrong: Substation with Id=1020 don't exists, 404
+2021-09-10 01:24:59.3553|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.3553|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.3710|ERROR|allfile|Something went wrong: Substation with Id=1024 don't exists, 404
+2021-09-10 01:24:59.3710|ERROR|allfile|Something went wrong: Substation with Id=1020 don't exists, 404
+2021-09-10 01:24:59.3710|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.3710|ERROR|allfile|Something went wrong: Substation with Id=1019 don't exists, 404
+2021-09-10 01:24:59.3818|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:24:59.3818|ERROR|allfile|Something went wrong: Substation with Id=1024 don't exists, 404
+2021-09-10 01:28:24.8776|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:24.8776|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:26.0072|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:26.0072|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:26.1562|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:26.1562|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:26.1562|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:26.1562|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:26.1562|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:26.1562|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:26.4311|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:26.4311|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:26.6592|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:26.6592|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:26.9771|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:26.9771|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:27.1179|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:27.1179|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:27.1681|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:27.1681|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:27.4873|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:27.4873|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:27.5838|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:27.5842|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:27.6610|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:27.6610|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:27.9760|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:27.9760|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:28.0703|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:28.0703|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:28.9947|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:28.9947|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:29.1313|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:29.1313|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:29.1313|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:29.1313|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:29.4288|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:29.4288|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:29.5235|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:29.5235|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:29.5814|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:29.5814|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:29.9337|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:29.9337|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:30.0064|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:30.0064|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:30.0523|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:30.0523|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:30.4155|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:30.4155|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:28:31.5523|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:28:31.5523|ERROR|allfile|Something went wrong: Substation with Id=1025 don't exists, 404
+2021-09-10 01:29:30.9443|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-10 01:29:30.9687|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-10 01:29:30.9687|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-10 01:29:37.8057|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-10 01:29:38.7308|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-10 01:30:50.7009|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-10 01:30:50.7228|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-10 01:30:50.7245|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-10 01:30:50.7245|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-10 01:30:52.2717|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-10 01:32:29.5505|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-10 01:32:29.5710|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-10 01:32:29.5710|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-10 01:32:29.5710|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-10 01:33:56.2475|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-10 01:33:56.2736|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-10 01:33:56.2736|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-10 01:34:09.4774|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-10 01:34:10.4115|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-10 01:37:19.2829|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-10 01:37:19.3071|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-10 01:37:19.3071|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-10 01:37:33.1959|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-10 01:37:34.1293|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-10 01:37:43.5364|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 01:37:43.5471|ERROR|allfile|Something went wrong: Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException: Database operation expected to affect 1 row(s) but actually affected 0 row(s). Data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithoutPropagation(Int32 commandIndex, RelationalDataReader reader)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.Consume(RelationalDataReader reader)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at Repository.UnitOfWork.Complete() in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Repository\UnitOfWork.cs:line 33
+   at Web.Services.LoadBreakSwitchService.Delete(Int32 id) in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web\Services\LoadBreakSwitchService.cs:line 127
+   at Web.Controllers.LoadBreakSwitchController.Delete(Int32 id) in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web\Controllers\LoadBreakSwitchController.cs:line 65
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-09-10 01:44:36.1175|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-10 01:44:36.1424|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-10 01:44:36.1424|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-10 01:45:32.3718|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-10 01:45:33.3336|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-10 01:45:54.0500|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-10 01:45:54.0737|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-10 01:45:54.0737|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-10 01:47:21.3962|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-10 01:47:22.3299|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-10 01:54:15.7810|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-10 01:54:15.8050|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-10 01:54:15.8050|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-10 01:54:25.8543|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-10 01:54:26.8298|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-10 02:03:53.7445|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-10 02:03:53.7445|ERROR|allfile|Something went wrong: Disconnector with mrid='423454' or name='2342' already exists, 409

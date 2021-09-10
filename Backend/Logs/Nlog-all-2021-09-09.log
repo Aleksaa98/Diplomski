@@ -1,37 +1,14 @@
-2021-09-05 14:28:05.2963|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
-2021-09-05 14:28:05.3231|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
-2021-09-05 14:28:05.3268|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
-2021-09-05 14:28:28.4085|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
-2021-09-05 14:28:29.4699|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
-2021-09-05 15:54:59.0900|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
-2021-09-05 15:54:59.0935|ERROR|allfile|Something went wrong: Substation with Id=28 don't exists, 404
-2021-09-05 15:55:47.9925|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
-2021-09-05 15:55:47.9925|ERROR|allfile|Something went wrong: Substation with Id=28 don't exists, 404
-2021-09-05 15:56:59.6535|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
-2021-09-05 15:56:59.6535|ERROR|allfile|Something went wrong: Substation with Id=28 don't exists, 404
-2021-09-05 16:00:23.4295|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
-2021-09-05 16:00:23.4295|ERROR|allfile|Something went wrong: Substation with Id=28 don't exists, 404
-2021-09-05 16:01:31.5716|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
-2021-09-05 16:01:31.5716|ERROR|allfile|Something went wrong: Substation with Id=28 don't exists, 404
-2021-09-05 16:04:14.8188|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
-2021-09-05 16:04:14.8188|ERROR|allfile|Something went wrong: Substation with Id=28 don't exists, 404
-2021-09-05 16:06:43.7780|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
-2021-09-05 16:06:43.7780|ERROR|allfile|Something went wrong: Substation with Id=28 don't exists, 404
-2021-09-05 16:07:19.5473|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
-2021-09-05 16:07:19.5473|ERROR|allfile|Something went wrong: Substation with Id=28 don't exists, 404
-2021-09-05 16:27:54.5792|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
-2021-09-05 16:27:54.5792|ERROR|allfile|Something went wrong: Breaker with mrid='fasda12' or name='NSDADA' already exists, 409
-2021-09-05 18:27:07.4743|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
-2021-09-05 18:27:07.5027|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
-2021-09-05 18:27:07.5027|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
-2021-09-05 18:38:44.4619|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
-2021-09-05 18:38:45.4302|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
-2021-09-05 23:28:30.4632|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (11ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+2021-09-09 15:16:31.6538|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-09 15:16:31.6840|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-09 15:16:31.6840|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-09 15:16:47.0309|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-09 15:16:48.0803|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-09 18:59:09.9093|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (13ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
 SET NOCOUNT ON;
 DELETE FROM [Substations]
 WHERE [Id] = @p0;
 SELECT @@ROWCOUNT;
-2021-09-05 23:28:30.5101|ERROR|Microsoft.EntityFrameworkCore.Update|An exception occurred in the database while saving changes for context type 'Context.AppDbContext'.
+2021-09-09 18:59:09.9792|ERROR|Microsoft.EntityFrameworkCore.Update|An exception occurred in the database while saving changes for context type 'Context.AppDbContext'.
 Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
  ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Breakers_Substations_SubstationId". The conflict occurred in database "SubstationDB", table "dbo.Breakers", column 'SubstationId'.
 The statement has been terminated.
@@ -44,25 +21,20 @@ The statement has been terminated.
    at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
    at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
    at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
-   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
    at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
-   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
-   at System.Data.Common.DbCommand.ExecuteReader()
    at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
    at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
-ClientConnectionId:fbd4b34d-72ff-4fe2-b54e-4d41eb427c7f
+ClientConnectionId:1719ae8f-7be1-4e33-8baa-4130abdca20c
 Error Number:547,State:0,Class:16
    --- End of inner exception stack trace ---
    at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
    at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
    at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
-2021-09-05 23:28:30.5884|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
-2021-09-05 23:28:30.5921|ERROR|allfile|Something went wrong: Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+2021-09-09 18:59:10.0661|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-09 18:59:10.0698|ERROR|allfile|Something went wrong: Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
  ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Breakers_Substations_SubstationId". The conflict occurred in database "SubstationDB", table "dbo.Breakers", column 'SubstationId'.
 The statement has been terminated.
    at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
@@ -74,24 +46,18 @@ The statement has been terminated.
    at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
    at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
    at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
-   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
    at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
-   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
-   at System.Data.Common.DbCommand.ExecuteReader()
    at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
    at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
-ClientConnectionId:fbd4b34d-72ff-4fe2-b54e-4d41eb427c7f
+ClientConnectionId:1719ae8f-7be1-4e33-8baa-4130abdca20c
 Error Number:547,State:0,Class:16
    --- End of inner exception stack trace ---
    at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
    at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
    at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
    at Repository.UnitOfWork.Complete() in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Repository\UnitOfWork.cs:line 33
    at Web.Services.SubstationService.Delete(Int32 id) in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web\Services\SubstationService.cs:line 64
    at Web.Controllers.SubstationController.Delete(Int32 id) in C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web\Controllers\SubstationController.cs:line 66
@@ -109,3 +75,10 @@ Error Number:547,State:0,Class:16
    at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
    at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-09-09 20:50:42.2934|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-09 20:50:42.2934|ERROR|allfile|Something went wrong: Substation with Id=1047 don't exists, 404
+2021-09-09 20:52:44.3371|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-09 20:52:44.8610|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-09 20:52:44.8759|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-09 20:53:38.9858|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-09 20:53:39.9021|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'

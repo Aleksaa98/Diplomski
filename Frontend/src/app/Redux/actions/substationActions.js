@@ -1,4 +1,4 @@
-import {allSubstations,getByNameSubCreator, updateSubstationCreator,deleteSubstationCreator,addSubstationCreator,changeStateCreator} from "../actionCreators/substationActionsCreator";
+import {allSubstations,getByNameSubCreator,updateActiveCreator, updateSubstationCreator,deleteSubstationCreator,addSubstationCreator,changeStateCreator} from "../actionCreators/substationActionsCreator";
 import axios from "axios";
 
 axios.defaults.baseURL = "http://localhost:56550/api";
@@ -19,6 +19,7 @@ export const updateSubstation = (substation) => async(dispatch) =>
     await axios.put(`/Substation/${substation.id}`,substation).catch((err) =>{
         console.log("Error",err);
     });
+    console.log(substation);
     dispatch(updateSubstationCreator(substation));
 }
 
@@ -27,7 +28,10 @@ export const deleteSubstation = (id) => async(dispatch) =>
      await axios.delete(`/Substation/${id}`).catch((err) =>{
         console.log("Error",err);
     });
-    dispatch(deleteSubstationCreator(id));
+    const {data} = await axios.get("/Substation").catch((err) =>{
+        console.log("Error",err);
+    });
+    dispatch(deleteSubstationCreator(data));
 }
 
 export const addSubstation = (substation) => async(dispatch) => {
@@ -40,10 +44,12 @@ export const addSubstation = (substation) => async(dispatch) => {
     
 }
 
-export const changeState = (subName,state) => async(dispatch) => {
+export const changeState = (sub,subName,state) => async(dispatch) => {
 
-    dispatch(changeStateCreator(subName,state));
-    
+    await axios.put(`/Substation/${sub.id}`,sub).catch((err) =>{
+        console.log("Error",err);
+    });
+    dispatch(changeStateCreator(subName,state));  
 }
 
 export const getByNameSub = (subId) => async(dispatch) => {
@@ -53,3 +59,11 @@ export const getByNameSub = (subId) => async(dispatch) => {
     console.log(data);
     dispatch(getByNameSubCreator(data));
 }
+
+export const updateActive = (active) => async(dispatch) => {
+
+    console.log(active);
+    
+    dispatch(updateActiveCreator(active));
+}
+

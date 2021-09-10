@@ -11,22 +11,31 @@ class Sidebar extends Component {
   state = {};
   
   updateState(name){
-    console.log('ssssssssssssssssssssssssss');
     this.props.subtations.forEach((obj => {
       if(obj.name === name)
       {
         if(!obj.state){
-          this.props.changeState(obj.name,true)
+          obj.state = true;
+          this.props.changeState(obj,obj.name,true)
         }
         else{
-          this.props.changeState(obj.name,false)
+          obj.state = false;
+          this.props.changeState(obj,obj.name,false)
         }
       }
       else{
-        this.props.changeState(obj.name,false)
+        obj.state = false;
+        this.props.changeState(obj,obj.name,false)
       }
   }));
   this.toggleMenuState('novo')
+  }
+
+  updateStateFalseAll(){
+    this.props.subtations.forEach((obj => {
+          obj.state = false;
+          this.props.changeState(obj,obj.name,false)
+  }));
   }
 
   updateActiveUser(id){
@@ -117,7 +126,7 @@ class Sidebar extends Component {
           <li className="nav-item nav-category">
             <span className="nav-link"><Trans>Navigation</Trans></span>
           </li>
-          <li className={ this.isPathActive('/dashboard') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
+          <li className={ this.isPathActive('/dashboard') ? 'nav-item menu-items active' : 'nav-item menu-items' } onClick={ () => this.updateStateFalseAll() }>
             <Link className="nav-link" to="/dashboard">
               <span className="menu-icon"><i className="mdi mdi-speedometer"></i></span>
               <span className="menu-title"><Trans>Dashboard</Trans></span>

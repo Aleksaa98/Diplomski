@@ -2,6 +2,7 @@ import React, {useEffect } from 'react';
 //import Slider from "react-slick";
 import { TodoListComponent } from '../apps/TodoList'
 import { useDispatch,useSelector } from "react-redux";
+import { updateActive, getAllSubstations } from '../Redux/actions/substationActions'
 import {Bar, Pie} from 'react-chartjs-2';
 //import { VectorMap } from "react-jvectormap"
 
@@ -11,8 +12,8 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    //fillData()
-  },[]);
+    dispatch(updateActive());
+  },[substations]);
 
 const disconnectorCount= () => {
   var count = 0;
