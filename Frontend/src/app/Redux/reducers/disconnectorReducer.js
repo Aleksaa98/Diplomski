@@ -12,10 +12,8 @@ export const disconnectorReducer = (state = initialState, action) => {
                 ...state.disconnectors,
                 action.payload
             ]
-            state.disconnectors = newDisconnectors;
-
             return {
-                disconnectors: state.substations,
+                disconnectors: newDisconnectors,
             };
         case ActionTypes.ALL_DISCONNECTORS:
             return {

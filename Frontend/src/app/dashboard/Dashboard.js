@@ -7,6 +7,7 @@ import {Bar, Pie} from 'react-chartjs-2';
 //import { VectorMap } from "react-jvectormap"
 
 const Dashboard = () => {
+  const icon = useSelector((state) => state.allIconLists.icon);
   const substations = useSelector((state) => state.allSubstations.substations);
 
   const dispatch = useDispatch();
@@ -168,7 +169,6 @@ const doughnutPieOptions = {
   }
 };
 
-
   // const toggleProBanner = () => {
   //   document.querySelector('.proBanner').classList.toggle("hide");
   // }
@@ -195,7 +195,7 @@ const doughnutPieOptions = {
                     <h6 className="text-muted font-weight-normal"> Substation1 has the most</h6>
                   </div>
                   <div className="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                    <i className="icon-lg mdi mdi-flash-off text-primary ml-auto"></i>
+                    <i className={icon ? "icon-lg mdi mdi-flash-off text-primary ml-auto" : "icon-lg mdi mdi-led-variant-off text-primary ml-auto"}></i>
                   </div>
                 </div>
               </div>
@@ -214,7 +214,7 @@ const doughnutPieOptions = {
                     <h6 className="text-muted font-weight-normal"> Substation3 has the most</h6>
                   </div>
                   <div className="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                    <i className="icon-lg mdi mdi-image-broken-variant text-danger ml-auto"></i>
+                    <i className={icon ? "icon-lg mdi mdi-image-broken-variant text-danger ml-auto" : "icon-lg mdi mdi-format-wrap-tight text-danger ml-auto"}></i>
                   </div>
                 </div>
               </div>
@@ -226,14 +226,14 @@ const doughnutPieOptions = {
                 <h3>Load Break Switch</h3>
                 <div className="row">
                   <div className="col-8 col-sm-12 col-xl-8 my-auto">
-                    <div className="d-flex d-sm-block d-md-flex align-items-center">
+                    <div className="d-flex d-sm-block d-md-flex align-items-center">  
                       <h2 className="mb-0">{loadBreakSwitchCount()}</h2>
                       <p className="text-danger ml-2 mb-0 font-weight-medium">-2.1% </p>
                     </div>
                     <h6 className="text-muted font-weight-normal"> Substation2 has the most</h6>
                   </div>
                   <div className="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                    <i className="icon-lg mdi mdi-security-network text-success ml-auto"></i>
+                    <i className={icon ? "icon-lg mdi mdi-security-network text-success ml-auto" : "icon-lg mdi mdi-server-security text-success ml-auto"}></i>
                   </div>
                 </div>
               </div>
@@ -252,7 +252,7 @@ const doughnutPieOptions = {
                     <h6 className="text-muted font-weight-normal"> Substation1 has the most</h6>
                   </div>
                   <div className="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                    <i className="icon-lg mdi mdi-switch text-warning ml-auto"></i>
+                    <i className={icon ?"icon-lg mdi mdi-switch text-warning ml-auto" : "icon-lg mdi mdi-server-network text-warning ml-auto"}></i>
                   </div>
                 </div>
               </div>

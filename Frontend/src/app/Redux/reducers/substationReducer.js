@@ -23,9 +23,11 @@ export const substationReducer = (state = initialState, action) => {
             var active = state.active;
             if(state.active != null)
             {
+                console.log(state.active.id);
                 const updateActiveInfoId = state.substations.findIndex(
                     (item) => item.id ===  state.active.id
                 );
+               
                 active = action.payload[updateActiveInfoId];
             }
            

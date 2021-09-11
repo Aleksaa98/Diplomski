@@ -1,6 +1,6 @@
 import React, { useEffect, useState, lazy } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { deleteLoad,getAllLoad,addLoad } from '../Redux/actions/loadActions';
+import { deleteLoad, getAllLoad, addLoad } from '../Redux/actions/loadActions';
 import { getAllSubstations } from '../Redux/actions/substationActions'
 import { Form } from 'react-bootstrap';
 import Dialog from '@material-ui/core/Dialog';
@@ -12,7 +12,8 @@ import { Dropdown } from 'react-bootstrap';
 const Load = () => {
     const activeSub = useSelector((state) => state.allSubstations.active);
     const switches = activeSub.loadBreakSwitches;
-
+    const icon = useSelector((state) => state.allIconLists.icon);
+    
     const [openAddMenu, setOpenAddMenu] = useState(false);
     const [loadBS, setLoadBS] = useState({
         id: 0,
@@ -34,16 +35,31 @@ const Load = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-
-    }, []);
+        dispatch(getAllLoad());
+    }, [switches]);
 
     const handleMenuClose = () => {
         setOpenAddMenu(false);
+        setLoadBS({
+            id: 0,
+            mrId: "",
+            name: "",
+            description: "",
+            costPerUnit: "",
+            failureRate: "",
+            IsUnderground: true,
+            Phases: "1",
+            RatedVoltage: "",
+            NormalOpen: true,
+            Retained: true,
+            SwitchOnCount: "",
+            SubstationId: activeSub.id,
+            RatedCurrent: "",
+        });
     }
 
     const handleNewLoadBS = () => {
         dispatch(addLoad(loadBS));
-
         setLoadBS({
             id: 0,
             mrId: "",
@@ -94,7 +110,7 @@ const Load = () => {
         dispatch(deleteLoad(id));
         dispatch(getAllLoad());
         window.location.reload();
-      }
+    }
 
     const renderTableBody = () => {
         return switches.map(element => {
@@ -109,7 +125,7 @@ const Load = () => {
                                 <Dropdown.Header>Settings</Dropdown.Header>
                                 <Dropdown.Divider></Dropdown.Divider>
                                 <Dropdown.Item>Edit</Dropdown.Item>
-                                <Dropdown.Item  onClick={() => handleDelete(element.id)}>Delete</Dropdown.Item>
+                                <Dropdown.Item onClick={() => handleDelete(element.id)}>Delete</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </td>
@@ -156,7 +172,7 @@ const Load = () => {
 
     return (
         <div>
-            <h1>Load Break Switch <i class="mdi mdi-security-network"></i> <button type="button" className="btn btn-inverse-success btn-lg" onClick={() => setOpenAddMenu(true)}>+NewLoadBreakSwitch</button>
+            <h1>Load Break Switch <i class={icon ? "mdi mdi-security-network" : " mdi mdi-server-security"}></i> <button type="button" className="btn btn-inverse-success btn-lg" onClick={() => setOpenAddMenu(true)}>+NewLoadBreakSwitch</button>
             </h1>
 
             <div className="col-lg-12 grid-margin stretch-card">
@@ -335,7 +351,8 @@ const Load = () => {
                                     </div>
                                     <div className="col-md-6">
                                         <div className="template-demo">
-                                            <button type="submit" className="btn btn-primary btn-icon-text" >
+                                            <button type="submit" disabled={!loadBS.mrId || !loadBS.name || !loadBS.description || (loadBS.costPerUnit < 0 || !loadBS.costPerUnit)
+                                                || (loadBS.failureRate < 0 || !loadBS.failureRate) || (loadBS.RatedVoltage < 0 || !loadBS.RatedVoltage) || (loadBS.SwitchOnCount < 0 || !loadBS.SwitchOnCount) || (loadBS.RatedCurrent < 0 || !loadBS.RatedCurrent)} className="btn btn-primary btn-icon-text" >
                                                 <i className="mdi mdi-file-check btn-icon-prepend"></i>
                                                 Submit
                                             </button>

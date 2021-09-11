@@ -7,6 +7,7 @@ import { Dropdown } from 'react-bootstrap';
 
 
 const Breaker = () => {
+    const icon = useSelector((state) => state.allIconLists.icon);
     const activeSub = useSelector((state) => state.allSubstations.active);
     const [openAddMenu, setOpenAddMenu] = useState(false);
     const switches = activeSub.breakers;
@@ -31,11 +32,28 @@ const Breaker = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-
-    }, []);
+        dispatch(getAllBreakers());
+    }, [switches]);
 
     const handleMenuClose = () => {
         setOpenAddMenu(false);
+        setBreaker({
+            id: 0,
+            mrId: "",
+            name: "",
+            description: "",
+            costPerUnit: "",
+            failureRate: "",
+            IsUnderground: true,
+            Phases: "1",
+            RatedVoltage: "",
+            NormalOpen: true,
+            Retained: true,
+            SwitchOnCount: "",
+            SubstationId: activeSub.id,
+            RatedCurrent: "",
+            InTransitTime: ""
+        });
     }
 
     const handleNewBreaker = () => {
@@ -64,7 +82,7 @@ const Breaker = () => {
         dispatch(deleteBreaker(id));
         dispatch(getAllBreakers());
         window.location.reload();
-      }
+    }
 
     const handleInputChange = (event) => {
         setBreaker({
@@ -152,7 +170,7 @@ const Breaker = () => {
 
     return (
         <div>
-            <h1>Load Break Switch <i class="mdi mdi-switch"></i>  <button type="button" className="btn btn-inverse-warning btn-lg" onClick={() => setOpenAddMenu(true)}>+NewBreaker</button>
+            <h1>Load Break Switch <i class={icon ? "mdi mdi-switch" : "mdi mdi-server-network"}></i>  <button type="button" className="btn btn-inverse-warning btn-lg" onClick={() => setOpenAddMenu(true)}>+NewBreaker</button>
             </h1>
 
             <div className="col-lg-12 grid-margin stretch-card">
@@ -337,7 +355,8 @@ const Breaker = () => {
                                     </div>
                                     <div className="col-md-6">
                                         <div className="template-demo">
-                                            <button type="submit" className="btn btn-primary btn-icon-text" >
+                                            <button type="submit" disabled={!breaker.mrId || !breaker.name || !breaker.description || (breaker.costPerUnit < 0 || !breaker.costPerUnit) || (breaker.failureRate < 0 || !breaker.failureRate) ||
+                                                (breaker.RatedVoltage < 0 || !breaker.RatedVoltage) || (breaker.SwitchOnCount < 0 || !breaker.SwitchOnCount) || (breaker.RatedCurrent < 0 || !breaker.RatedCurrent) || (breaker.InTransitTime < 0 || !breaker.InTransitTime)} className="btn btn-primary btn-icon-text" >
                                                 <i className="mdi mdi-file-check btn-icon-prepend"></i>
                                                 Submit
                                             </button>

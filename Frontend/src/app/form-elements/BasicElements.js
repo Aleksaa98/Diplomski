@@ -548,7 +548,7 @@ export class BasicElements extends Component {
                             <i className="input-helper"></i>
                           </label>
                         </div>
-                        </div>
+                      </div>
                       </Form.Group>
                     </div>
                   </div>

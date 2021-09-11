@@ -8,6 +8,7 @@ import Dialog from '@material-ui/core/Dialog';
 
 
 const Substation = () => {
+  const icon = useSelector((state) => state.allIconLists.icon);
   const activeSub = useSelector((state) => state.allSubstations.active);
   const [openAddMenu, setOpenAddMenu] = useState(false);
   const [substation, setSubstation] = useState({
@@ -121,7 +122,7 @@ const Substation = () => {
 
   return (
     <div>
-      <h1> SUBSTATION  <i className="mdi mdi-houzz-box"></i> - {activeSub.name} </h1>
+      <h1> SUBSTATION  <i  className={icon ? "mdi mdi-houzz-box" : "mdi mdi-domain"}></i> - {activeSub.name} </h1>
       <div className="row">
         <div className="col-12 grid-margin stretch-card">
 
@@ -142,7 +143,7 @@ const Substation = () => {
                   <h6 className="text-muted font-weight-normal"> Means of quickly disconnecting electronic systems from their primary power source</h6>
                 </div>
                 <div className="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                  <i className="icon-lg mdi mdi-flash-off text-primary ml-auto"></i>
+                  <i className={icon ? "icon-lg mdi mdi-flash-off text-primary ml-auto" : "icon-lg mdi mdi-led-variant-off text-primary ml-auto"}></i>
                 </div>
               </div>
             </div>
@@ -161,7 +162,7 @@ const Substation = () => {
                   <h6 className="text-muted font-weight-normal"> Switch that's used to isolate electrical equipment from the mains supply</h6>
                 </div>
                 <div className="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                  <i className="icon-lg mdi mdi-image-broken-variant text-danger ml-auto"></i>
+                  <i className={icon ? "icon-lg mdi mdi-image-broken-variant text-danger ml-auto" : "icon-lg mdi mdi-format-wrap-tight text-danger ml-auto"}></i>
                 </div>
               </div>
             </div>
@@ -180,7 +181,7 @@ const Substation = () => {
                   <h6 className="text-muted font-weight-normal"> A disconnect switch designed to provide making or breaking of specified currents</h6>
                 </div>
                 <div className="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                  <i className="icon-lg mdi mdi-security-network text-success ml-auto"></i>
+                  <i className={icon ? "icon-lg mdi mdi-security-network text-success ml-auto" : "icon-lg mdi mdi-server-security text-success ml-auto"}></i>
                 </div>
               </div>
             </div>
@@ -199,7 +200,7 @@ const Substation = () => {
                   <h6 className="text-muted font-weight-normal">A switch that is designed to provide switching power on and off in a system.</h6>
                 </div>
                 <div className="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                  <i className="icon-lg mdi mdi-switch text-warning ml-auto"></i>
+                  <i className={icon ?"icon-lg mdi mdi-switch text-warning ml-auto" : "icon-lg mdi mdi-server-network text-warning ml-auto"}></i>
                 </div>
               </div>
             </div>
@@ -291,7 +292,7 @@ const Substation = () => {
                   </div>
                 </Form.Group>
                 <div className="template-demo">
-                  <button type="button" className="btn btn-primary btn-icon-text" onClick={handleUpdateSubstation} >
+                  <button type="button" disabled={!substation.mrid || !substation.name || !substation.description} className="btn btn-primary btn-icon-text" onClick={handleUpdateSubstation} >
                     <i className="mdi mdi-file-check btn-icon-prepend"></i>
                     Submit
                   </button>

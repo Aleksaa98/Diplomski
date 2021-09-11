@@ -7,6 +7,7 @@ import { Dropdown } from 'react-bootstrap';
 
 
 const Fuse = () => {
+    const icon = useSelector((state) => state.allIconLists.icon);
     const activeSub = useSelector((state) => state.allSubstations.active);
     const switches = activeSub.fuses;
     const [openAddMenu, setOpenAddMenu] = useState(false);
@@ -32,8 +33,8 @@ const Fuse = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-
-    }, []);
+        dispatch(getAllFuses());
+    }, [switches]);
 
     const handleDelete = (id) => {
         dispatch(deleteFuse(id));
@@ -43,6 +44,24 @@ const Fuse = () => {
 
     const handleMenuClose = () => {
         setOpenAddMenu(false);
+        setFuse({
+            id: 0,
+            mrId: "",
+            name: "",
+            description: "",
+            costPerUnit: "",
+            failureRate: "",
+            IsUnderground: true,
+            Phases: "1",
+            RatedVoltage: "",
+            NormalOpen: true,
+            Retained: true,
+            SwitchOnCount: "",
+            SubstationId: activeSub.id,
+            RatingCurrent: "",
+            Cutout: true,
+            MaxFaultCurrent: ""
+        });
     }
 
     const handleNewFuse = () => {
@@ -155,7 +174,7 @@ const Fuse = () => {
 
     return (
         <div>
-            <h1>Load Break Switch <i class="mdi mdi-image-broken-variant"></i> <button type="button" className="btn btn-inverse-danger btn-lg" onClick={() => setOpenAddMenu(true)}>+NewFuse</button>
+            <h1>Load Break Switch <i class={icon ? "mdi mdi-image-broken-variant" : "mdi mdi-format-wrap-tight "}></i> <button type="button" className="btn btn-inverse-danger btn-lg" onClick={() => setOpenAddMenu(true)}>+NewFuse</button>
             </h1>
 
             <div className="col-lg-12 grid-margin stretch-card">
@@ -366,7 +385,7 @@ const Fuse = () => {
                                     </div>
                                     <div className="col-md-6">
                                         <div className="template-demo">
-                                            <button type="submit" className="btn btn-primary btn-icon-text" >
+                                            <button type="submit" disabled={!fuse.mrId || !fuse.name || !fuse.description || (fuse.costPerUnit < 0|| !fuse.costPerUnit) || (fuse.failureRate < 0|| !fuse.failureRate) || (fuse.RatedVoltage < 0|| !fuse.RatedVoltage) || (fuse.SwitchOnCount < 0|| !fuse.SwitchOnCount) || (fuse.RatingCurrent < 0|| !fuse.RatingCurrent) || (fuse.MaxFaultCurrent < 0|| !fuse.MaxFaultCurrent)} className="btn btn-primary btn-icon-text" >
                                                 <i className="mdi mdi-file-check btn-icon-prepend"></i>
                                                 Submit
                                             </button>

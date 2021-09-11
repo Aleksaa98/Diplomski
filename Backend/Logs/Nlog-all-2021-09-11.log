@@ -1,0 +1,26 @@
+2021-09-11 15:11:32.0606|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-11 15:11:32.0919|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-11 15:11:32.0919|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-11 15:11:46.8492|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-11 15:11:47.9152|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-11 16:27:18.5007|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-11 16:27:18.5258|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-11 16:27:18.5293|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-11 16:27:29.4202|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-11 16:27:30.3634|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-11 16:32:54.1449|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-11 16:32:54.1449|ERROR|allfile|Something went wrong: Disconnector with mrid='312' or name='3123' already exists, 409
+2021-09-11 16:41:08.2870|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-11 16:41:08.2870|ERROR|allfile|Something went wrong: Disconnector with mrid='4234' or name='234' already exists, 409
+2021-09-11 16:43:55.6252|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-11 16:43:55.6252|ERROR|allfile|Something went wrong: Disconnector with mrid='234' or name='4234' already exists, 409
+2021-09-11 16:44:25.7027|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-11 16:44:25.7027|ERROR|allfile|Something went wrong: Disconnector with mrid='4234234' or name='234' already exists, 409
+2021-09-11 16:57:33.5456|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-11 16:57:33.5456|ERROR|allfile|Something went wrong: Disconnector with mrid='423' or name='4234' already exists, 409
+2021-09-11 17:06:07.0019|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-11 17:06:07.0019|ERROR|allfile|Something went wrong: Disconnector with mrid='3123' or name='123' already exists, 409
+2021-09-11 17:41:37.2895|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-11 17:41:37.2895|ERROR|allfile|Something went wrong: Disconnector with mrid='423' or name='423' already exists, 409
+2021-09-11 17:42:32.4721|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-11 17:42:32.4721|ERROR|allfile|Something went wrong: Disconnector with mrid='423' or name='4234' already exists, 409

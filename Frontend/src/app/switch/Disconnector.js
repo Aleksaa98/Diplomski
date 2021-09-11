@@ -10,6 +10,7 @@ import { Dropdown } from 'react-bootstrap';
 
 
 const Disconnector = () => {
+    const icon = useSelector((state) => state.allIconLists.icon);
     const activeSub = useSelector((state) => state.allSubstations.active);
     const switches = activeSub.disconnector;
     const [openAddMenu, setOpenAddMenu] = useState(false);
@@ -34,15 +35,30 @@ const Disconnector = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-
-    }, []);
+      dispatch(getAllDisconnectors());
+    }, [switches]);
 
     const handleMenuClose = () => {
         setOpenAddMenu(false);
+        setDisconnector({
+            id: 0,
+            mrId: "",
+            name: "",
+            description: "",
+            costPerUnit: "",
+            failureRate: "",
+            IsUnderground: true,
+            Phases: "1",
+            RatedVoltage: "",
+            NormalOpen: true,
+            Retained: true,
+            SwitchOnCount: "",
+            SubstationId: activeSub.id,
+            ReactiveBreakingCurrent: ""
+        });
     }
 
     const handleNewDisconnector = () => {
-        console.log('dasdssssssssssssssssssssssssss')
         dispatch(addDisconnector(disconnector));
         setDisconnector({
             id: 0,
@@ -154,7 +170,7 @@ const Disconnector = () => {
 
     return (
         <div>
-            <h1>Load Break Switch <i class="mdi mdi-flash-off"></i>  <button type="button" className="btn btn-inverse-primary btn-lg" onClick={() => setOpenAddMenu(true)}>+NewDisconnector</button>
+            <h1>Load Break Switch <i class={icon ? "mdi mdi-flash-off" : "mdi mdi-led-variant-off"}></i>  <button type="button" className="btn btn-inverse-primary btn-lg" onClick={() => setOpenAddMenu(true)}>+NewDisconnector</button>
             </h1>
 
             <div className="col-lg-12 grid-margin stretch-card">
@@ -333,7 +349,7 @@ const Disconnector = () => {
                                     </div>
                                     <div className="col-md-6">
                                         <div className="template-demo">
-                                            <button type="submit" className="btn btn-primary btn-icon-text" >
+                                            <button type="submit" disabled={!disconnector.mrId || !disconnector.name || !disconnector.description || (disconnector.costPerUnit < 0|| !disconnector.costPerUnit) || (disconnector.failureRate < 0|| !disconnector.failureRate) || (disconnector.RatedVoltage < 0|| !disconnector.RatedVoltage) || (disconnector.SwitchOnCount < 0|| !disconnector.SwitchOnCount) || (disconnector.ReactiveBreakingCurrent < 0|| !disconnector.ReactiveBreakingCurrent) }  className="btn btn-primary btn-icon-text" >
                                                 <i className="mdi mdi-file-check btn-icon-prepend"></i>
                                                 Submit
                                             </button>
