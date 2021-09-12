@@ -76,6 +76,80 @@ const fillData = () => {
    return nesto;
  }
 
+ const mostDisconnectors = () => {
+  var max = substations[0];
+  substations.forEach(sub => {
+    if(sub.disconnector.length > max.disconnector.length)
+    {
+      max = sub;
+    }
+  });
+
+  if(max.disconnector.length == 0)
+  {
+    return "There are no disconnectors in Substations"
+  }
+  else{
+    return max.name + " has the most";
+  }
+  
+ }
+
+ const mostFuses = () => {
+  var max = substations[0];
+  substations.forEach(sub => {
+    if(sub.fuses.length > max.fuses.length)
+    {
+      max = sub;
+    }
+  });
+
+  if(max.fuses.length == 0)
+  {
+    return "There are no fuses in Substations"
+  }
+  else{
+    return max.name + " has the most";
+  }
+ }
+
+
+ const mostLoadBreakSwitches = () => {
+  var max = substations[0];
+  substations.forEach(sub => {
+    if(sub.loadBreakSwitches.length > max.loadBreakSwitches.length)
+    {
+      max = sub;
+    }
+  });
+  if(max.loadBreakSwitches.length == 0)
+  {
+    return "There are no LoadBreakSwitches in Substations"
+  }
+  else{
+    return max.name + " has the most";
+  }
+ }
+
+
+ const mostBreakers = () => {
+  var max = substations[0];
+  substations.forEach(sub => {
+    if(sub.breakers.length > max.breakers.length)
+    {
+      max = sub;
+    }
+  });
+  if(max.breakers.length == 0)
+  {
+    return "There are no breakers in Substations"
+  }
+  else{
+    return max.name + " has the most";
+  }
+ }
+
+
 
 
   const data = {
@@ -192,7 +266,7 @@ const doughnutPieOptions = {
                       <h2 className="mb-0">{disconnectorCount()}</h2>
                       <p className="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
                     </div>
-                    <h6 className="text-muted font-weight-normal"> Substation1 has the most</h6>
+                    <h6 className="text-muted font-weight-normal"> {mostDisconnectors()}</h6>
                   </div>
                   <div className="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
                     <i className={icon ? "icon-lg mdi mdi-flash-off text-primary ml-auto" : "icon-lg mdi mdi-led-variant-off text-primary ml-auto"}></i>
@@ -211,7 +285,7 @@ const doughnutPieOptions = {
                       <h2 className="mb-0">{fuseCount()}</h2>
                       <p className="text-success ml-2 mb-0 font-weight-medium">+8.3%</p>
                     </div>
-                    <h6 className="text-muted font-weight-normal"> Substation3 has the most</h6>
+                    <h6 className="text-muted font-weight-normal"> {mostFuses()}</h6>
                   </div>
                   <div className="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
                     <i className={icon ? "icon-lg mdi mdi-image-broken-variant text-danger ml-auto" : "icon-lg mdi mdi-format-wrap-tight text-danger ml-auto"}></i>
@@ -230,7 +304,7 @@ const doughnutPieOptions = {
                       <h2 className="mb-0">{loadBreakSwitchCount()}</h2>
                       <p className="text-danger ml-2 mb-0 font-weight-medium">-2.1% </p>
                     </div>
-                    <h6 className="text-muted font-weight-normal"> Substation2 has the most</h6>
+                    <h6 className="text-muted font-weight-normal"> {mostLoadBreakSwitches()}</h6>
                   </div>
                   <div className="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
                     <i className={icon ? "icon-lg mdi mdi-security-network text-success ml-auto" : "icon-lg mdi mdi-server-security text-success ml-auto"}></i>
@@ -249,7 +323,7 @@ const doughnutPieOptions = {
                       <h2 className="mb-1">{breakerCount()}</h2>
                       <p className="text-danger ml-2 mb-0 font-weight-medium">-2.1% </p>
                     </div>
-                    <h6 className="text-muted font-weight-normal"> Substation1 has the most</h6>
+                    <h6 className="text-muted font-weight-normal"> {mostBreakers()}</h6>
                   </div>
                   <div className="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
                     <i className={icon ?"icon-lg mdi mdi-switch text-warning ml-auto" : "icon-lg mdi mdi-server-network text-warning ml-auto"}></i>

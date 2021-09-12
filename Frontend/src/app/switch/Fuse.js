@@ -191,7 +191,7 @@ const Fuse = () => {
             </div>
 
 
-            <Dialog open={openAddMenu} onClose={() => setOpenAddMenu(!openAddMenu)} >
+            <Dialog open={openAddMenu} onClose={() => handleMenuClose()} >
                 <div className="col-23 grid-margin">
                     <div className="card">
                         <div className="card-body">

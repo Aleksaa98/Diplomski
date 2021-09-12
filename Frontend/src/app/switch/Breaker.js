@@ -1,6 +1,6 @@
 import React, { useEffect, useState, lazy } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { addBreaker, deleteBreaker, getAllBreakers } from '../Redux/actions/breakerActions';
+import { addBreaker,updateBreaker, deleteBreaker, getAllBreakers } from '../Redux/actions/breakerActions';
 import { Form } from 'react-bootstrap';
 import Dialog from '@material-ui/core/Dialog';
 import { Dropdown } from 'react-bootstrap';
@@ -9,6 +9,7 @@ import { Dropdown } from 'react-bootstrap';
 const Breaker = () => {
     const icon = useSelector((state) => state.allIconLists.icon);
     const activeSub = useSelector((state) => state.allSubstations.active);
+    const [whatState, setWhatState] = useState(true);
     const [openAddMenu, setOpenAddMenu] = useState(false);
     const switches = activeSub.breakers;
     const [breaker, setBreaker] = useState({
@@ -19,14 +20,14 @@ const Breaker = () => {
         costPerUnit: "",
         failureRate: "",
         IsUnderground: true,
-        Phases: "1",
-        RatedVoltage: "",
-        NormalOpen: true,
-        Retained: true,
-        SwitchOnCount: "",
-        SubstationId: activeSub.id,
-        RatedCurrent: "",
-        InTransitTime: ""
+        phases: "1",
+        ratedVoltage: "",
+        normalOpen: true,
+        retained: true,
+        switchOnCount: "",
+        substationId: activeSub.id,
+        ratedCurrent: "",
+        inTransitTime: ""
     })
 
     const dispatch = useDispatch();
@@ -45,14 +46,14 @@ const Breaker = () => {
             costPerUnit: "",
             failureRate: "",
             IsUnderground: true,
-            Phases: "1",
-            RatedVoltage: "",
-            NormalOpen: true,
-            Retained: true,
-            SwitchOnCount: "",
-            SubstationId: activeSub.id,
-            RatedCurrent: "",
-            InTransitTime: ""
+            phases: "1",
+            ratedVoltage: "",
+            normalOpen: true,
+            retained: true,
+            switchOnCount: "",
+            substationId: activeSub.id,
+            ratedCurrent: "",
+            inTransitTime: ""
         });
     }
 
@@ -67,14 +68,14 @@ const Breaker = () => {
             costPerUnit: "",
             failureRate: "",
             IsUnderground: true,
-            Phases: "1",
-            RatedVoltage: "",
-            NormalOpen: true,
-            Retained: true,
-            SwitchOnCount: "",
-            SubstationId: activeSub.id,
-            RatedCurrent: "",
-            InTransitTime: ""
+            phases: "1",
+            ratedVoltage: "",
+            normalOpen: true,
+            retained: true,
+            switchOnCount: "",
+            substationId: activeSub.id,
+            ratedCurrent: "",
+            inTransitTime: ""
         });
     }
 
@@ -113,6 +114,18 @@ const Breaker = () => {
         return retValue;
     }
 
+    const openEdit = (element) => {
+        setBreaker(element);
+        setWhatState(false);
+        setOpenAddMenu(true);
+    }
+
+    const handleEdit = () => {
+        dispatch(updateBreaker(breaker));
+        setWhatState(true);
+        handleMenuClose();
+    }
+
     const renderTableBody = () => {
         return switches.map(element => {
             return (
@@ -125,7 +138,7 @@ const Breaker = () => {
                             <Dropdown.Menu>
                                 <Dropdown.Header>Settings</Dropdown.Header>
                                 <Dropdown.Divider></Dropdown.Divider>
-                                <Dropdown.Item>Edit</Dropdown.Item>
+                                <Dropdown.Item onClick={() => openEdit(element)}>Edit</Dropdown.Item>
                                 <Dropdown.Item onClick={() => handleDelete(element.id)}>Delete</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
@@ -186,18 +199,18 @@ const Breaker = () => {
                 </div>
             </div>
 
-            <Dialog open={openAddMenu} onClose={() => setOpenAddMenu(!openAddMenu)} >
+            <Dialog open={openAddMenu} onClose={() => handleMenuClose()} >
                 <div className="col-23 grid-margin">
                     <div className="card">
                         <div className="card-body">
                             <h4 className="card-title">Add New Breaker</h4>
-                            <form className="forms-sample" onSubmit={handleNewBreaker} >
+                            <form className="forms-sample"  onSubmit={whatState ? handleNewBreaker : handleEdit} >
                                 <div className="row">
                                     <div className="col-md-6">
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">MrID</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="text" placeholder="MrID" name="mrId" onChange={handleInputChange} />
+                                                <Form.Control type="text" placeholder="MrID" name="mrid" value={breaker.mrid} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -205,7 +218,7 @@ const Breaker = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">Name</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="text" placeholder="Name" name="name" onChange={handleInputChange} />
+                                                <Form.Control type="text" placeholder="Name" name="name" value={breaker.name} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -215,7 +228,7 @@ const Breaker = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">Description</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="text" placeholder="Description" name="description" onChange={handleInputChange} />
+                                                <Form.Control type="text" placeholder="Description" name="description" value={breaker.description} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -223,7 +236,7 @@ const Breaker = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label" >In Transit Time</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="number" placeholder="InTransitTime" name="InTransitTime" onChange={handleInputChange} />
+                                                <Form.Control type="number" placeholder="InTransitTime" name="inTransitTime" value={breaker.inTransitTime} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -233,7 +246,7 @@ const Breaker = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">Phases</label>
                                             <div className="col-sm-9">
-                                                <select className="form-control" name="Phases" id="Phases" onChange={handleInputChange}  >
+                                                <select className="form-control" name="Phases" id="phases" onChange={handleInputChange}  >
                                                     <option value='1'> N </option>
                                                     <option value='2'> C </option>
                                                     <option value='3'> CN</option>
@@ -246,7 +259,7 @@ const Breaker = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">Rated Voltage</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="number" placeholder="RatedVoltage" name="RatedVoltage" onChange={handleInputChange} />
+                                                <Form.Control type="number" placeholder="RatedVoltage" name="ratedVoltage" value={breaker.ratedVoltage} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -256,7 +269,7 @@ const Breaker = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">Cost Per Unit</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="number" placeholder="costPerUnit" name="costPerUnit" onChange={handleInputChange} />
+                                                <Form.Control type="number" placeholder="costPerUnit" name="costPerUnit" value={breaker.costPerUnit} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -264,7 +277,7 @@ const Breaker = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">Failure Rate</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="number" placeholder="FailureRate" name="failureRate" onChange={handleInputChange} />
+                                                <Form.Control type="number" placeholder="FailureRate" name="failureRate" value={breaker.failureRate} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -274,7 +287,7 @@ const Breaker = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">Switch On Count</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="number" placeholder="SwitchOnCount" name="SwitchOnCount" onChange={handleInputChange} />
+                                                <Form.Control type="number" placeholder="SwitchOnCount" name="switchOnCount" value={breaker.switchOnCount} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -284,7 +297,7 @@ const Breaker = () => {
                                             <div className="col-sm-4">
                                                 <div className="form-check">
                                                     <label className="form-check-label">
-                                                        <input type="radio" className="form-check-input" name="Retained" id="Retained" value={true} defaultChecked onChange={handleInputChange} /> True
+                                                        <input type="radio" className="form-check-input" name="retained" id="retained" value={true} defaultChecked onChange={handleInputChange} /> True
                                                         <i className="input-helper"></i>
                                                     </label>
                                                 </div>
@@ -292,7 +305,7 @@ const Breaker = () => {
                                             <div className="col-sm-5">
                                                 <div className="form-check">
                                                     <label className="form-check-label">
-                                                        <input type="radio" className="form-check-input" name="Retained" id="Retained" value={false} onChange={handleInputChange} /> False
+                                                        <input type="radio" className="form-check-input" name="retained" id="retained" value={false} onChange={handleInputChange} /> False
                                                         <i className="input-helper"></i>
                                                     </label>
                                                 </div>
@@ -305,7 +318,7 @@ const Breaker = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label" >Rated Current</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="number" placeholder="RatedCurrent" name="RatedCurrent" onChange={handleInputChange} />
+                                                <Form.Control type="number" placeholder="RatedCurrent" name="ratedCurrent" value={breaker.ratedCurrent} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -315,7 +328,7 @@ const Breaker = () => {
                                             <div className="col-sm-4">
                                                 <div className="form-check">
                                                     <label className="form-check-label">
-                                                        <input type="radio" className="form-check-input" name="NormalOpen" id="NormalOpen" value={true} defaultChecked onChange={handleInputChange} /> True
+                                                        <input type="radio" className="form-check-input" name="normalOpen" id="normalOpen" value={true} defaultChecked onChange={handleInputChange} /> True
                                                         <i className="input-helper"></i>
                                                     </label>
                                                 </div>
@@ -323,7 +336,7 @@ const Breaker = () => {
                                             <div className="col-sm-5">
                                                 <div className="form-check">
                                                     <label className="form-check-label">
-                                                        <input type="radio" className="form-check-input" name="NormalOpen" id="NormalOpen" value={false} onChange={handleInputChange} /> False
+                                                        <input type="radio" className="form-check-input" name="normalOpen" id="normalOpen" value={false} onChange={handleInputChange} /> False
                                                         <i className="input-helper"></i>
                                                     </label>
                                                 </div>
@@ -338,7 +351,7 @@ const Breaker = () => {
                                             <div className="col-sm-4">
                                                 <div className="form-check">
                                                     <label className="form-check-label">
-                                                        <input type="radio" className="form-check-input" name="IsUnderground" id="IsUnderground" value={true} defaultChecked onChange={handleInputChange} /> True
+                                                        <input type="radio" className="form-check-input" name="isUnderground" id="isUnderground" value={true} defaultChecked onChange={handleInputChange} /> True
                                                         <i className="input-helper"></i>
                                                     </label>
                                                 </div>
@@ -346,7 +359,7 @@ const Breaker = () => {
                                             <div className="col-sm-5">
                                                 <div className="form-check">
                                                     <label className="form-check-label">
-                                                        <input type="radio" className="form-check-input" name="IsUnderground" id="IsUnderground" value={false} onChange={handleInputChange} /> False
+                                                        <input type="radio" className="form-check-input" name="isUnderground" id="isUnderground" value={false} onChange={handleInputChange} /> False
                                                         <i className="input-helper"></i>
                                                     </label>
                                                 </div>
@@ -355,8 +368,8 @@ const Breaker = () => {
                                     </div>
                                     <div className="col-md-6">
                                         <div className="template-demo">
-                                            <button type="submit" disabled={!breaker.mrId || !breaker.name || !breaker.description || (breaker.costPerUnit < 0 || !breaker.costPerUnit) || (breaker.failureRate < 0 || !breaker.failureRate) ||
-                                                (breaker.RatedVoltage < 0 || !breaker.RatedVoltage) || (breaker.SwitchOnCount < 0 || !breaker.SwitchOnCount) || (breaker.RatedCurrent < 0 || !breaker.RatedCurrent) || (breaker.InTransitTime < 0 || !breaker.InTransitTime)} className="btn btn-primary btn-icon-text" >
+                                            <button type="submit" disabled={!breaker.mrid || !breaker.name || !breaker.description || (breaker.costPerUnit < 0 || !breaker.costPerUnit) || (breaker.failureRate < 0 || !breaker.failureRate) ||
+                                                (breaker.ratedVoltage < 0 || !breaker.ratedVoltage) || (breaker.switchOnCount < 0 || !breaker.switchOnCount) || (breaker.ratedCurrent < 0 || !breaker.ratedCurrent) || (breaker.inTransitTime < 0 || !breaker.inTransitTime)} className="btn btn-primary btn-icon-text" >
                                                 <i className="mdi mdi-file-check btn-icon-prepend"></i>
                                                 Submit
                                             </button>

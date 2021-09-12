@@ -1,7 +1,7 @@
 import React, { useEffect, useState, lazy } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { updateSubstation, getAllSubstations, deleteSubstation } from '../Redux/actions/substationActions';
-import { addDisconnector, deleteDisconnector, getAllDisconnectors } from '../Redux/actions/disconnectorActions';
+import { addDisconnector, deleteDisconnector, getAllDisconnectors, updateDisconnector } from '../Redux/actions/disconnectorActions';
 import { Doughnut } from 'react-chartjs-2';
 import { Switch, Link, Route, Redirect } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
@@ -13,22 +13,23 @@ const Disconnector = () => {
     const icon = useSelector((state) => state.allIconLists.icon);
     const activeSub = useSelector((state) => state.allSubstations.active);
     const switches = activeSub.disconnector;
+    const [whatState,setWhatState] = useState(true);
     const [openAddMenu, setOpenAddMenu] = useState(false);
     const [disconnector, setDisconnector] = useState({
         id: 0,
-        mrId: "",
+        mrid: "",
         name: "",
         description: "",
         costPerUnit: "",
         failureRate: "",
-        IsUnderground: true,
-        Phases: "1",
-        RatedVoltage: "",
-        NormalOpen: true,
-        Retained: true,
-        SwitchOnCount: "",
-        SubstationId: activeSub.id,
-        ReactiveBreakingCurrent: ""
+        isUnderground: true,
+        phases: "1",
+        ratedVoltage: "",
+        normalOpen: true,
+        retained: true,
+        switchOnCount: "",
+        substationId: activeSub.id,
+        reactiveBreakingCurrent: ""
 
     })
 
@@ -42,19 +43,19 @@ const Disconnector = () => {
         setOpenAddMenu(false);
         setDisconnector({
             id: 0,
-            mrId: "",
+            mrid: "",
             name: "",
             description: "",
             costPerUnit: "",
             failureRate: "",
-            IsUnderground: true,
-            Phases: "1",
-            RatedVoltage: "",
-            NormalOpen: true,
-            Retained: true,
-            SwitchOnCount: "",
-            SubstationId: activeSub.id,
-            ReactiveBreakingCurrent: ""
+            isUnderground: true,
+            phases: "1",
+            ratedVoltage: "",
+            normalOpen: true,
+            retained: true,
+            switchOnCount: "",
+            substationId: activeSub.id,
+            reactiveBreakingCurrent: ""
         });
     }
 
@@ -62,19 +63,19 @@ const Disconnector = () => {
         dispatch(addDisconnector(disconnector));
         setDisconnector({
             id: 0,
-            mrId: "",
+            mrid: "",
             name: "",
             description: "",
             costPerUnit: "",
             failureRate: "",
-            IsUnderground: true,
-            Phases: "1",
-            RatedVoltage: "",
-            NormalOpen: true,
-            Retained: true,
-            SwitchOnCount: "",
-            SubstationId: activeSub.id,
-            ReactiveBreakingCurrent: ""
+            isUnderground: true,
+            phases: "1",
+            ratedVoltage: "",
+            normalOpen: true,
+            retained: true,
+            switchOnCount: "",
+            substationId: activeSub.id,
+            reactiveBreakingCurrent: ""
         });
     }
 
@@ -113,6 +114,18 @@ const Disconnector = () => {
         return retValue;
     }
 
+    const openEdit = (element) => {
+        setDisconnector(element);
+        setWhatState(false);
+        setOpenAddMenu(true);
+    }
+
+    const handleEdit = () => {
+        dispatch(updateDisconnector(disconnector));
+        setWhatState(true);
+        handleMenuClose();
+    }
+
     const renderTableBody = () => {
         return switches.map(element => {
             return (
@@ -125,7 +138,7 @@ const Disconnector = () => {
                             <Dropdown.Menu>
                                 <Dropdown.Header>Settings</Dropdown.Header>
                                 <Dropdown.Divider></Dropdown.Divider>
-                                <Dropdown.Item>Edit</Dropdown.Item>
+                                <Dropdown.Item onClick={() => openEdit(element)}>Edit</Dropdown.Item>
                                 <Dropdown.Item onClick={() => handleDelete(element.id)} >Delete</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
@@ -186,18 +199,18 @@ const Disconnector = () => {
                 </div>
             </div>
 
-            <Dialog open={openAddMenu} onClose={() => setOpenAddMenu(!openAddMenu)} >
+            <Dialog open={openAddMenu} onClose={() => handleMenuClose()} >
                 <div className="col-23 grid-margin">
                     <div className="card">
                         <div className="card-body">
                             <h4 className="card-title">Add New Disconnector</h4>
-                            <form className="forms-sample" onSubmit={handleNewDisconnector} >
+                            <form className="forms-sample" onSubmit={whatState ? handleNewDisconnector : handleEdit} >
                                 <div className="row">
                                     <div className="col-md-6">
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">MrID</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="text" placeholder="MrID" name="mrId" onChange={handleInputChange} />
+                                                <Form.Control type="text" placeholder="MrID" name="mrid" value={disconnector.mrid} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -205,7 +218,7 @@ const Disconnector = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">Name</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="text" placeholder="Name" name="name" onChange={handleInputChange} />
+                                                <Form.Control type="text" placeholder="Name" name="name" value={disconnector.name} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -215,7 +228,7 @@ const Disconnector = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">Description</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="text" placeholder="Description" name="description" onChange={handleInputChange} />
+                                                <Form.Control type="text" placeholder="Description" name="description" value={disconnector.description} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -223,7 +236,7 @@ const Disconnector = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">Failure Rate</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="number" placeholder="FailureRate" name="failureRate" onChange={handleInputChange} />
+                                                <Form.Control type="number" placeholder="FailureRate" name="failureRate" value={disconnector.failureRate}  onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -233,7 +246,7 @@ const Disconnector = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">Phases</label>
                                             <div className="col-sm-9">
-                                                <select className="form-control" name="Phases" id="Phases" onChange={handleInputChange}  >
+                                                <select className="form-control" name="phases" id="phases" onChange={handleInputChange}  >
                                                     <option value='1'> N </option>
                                                     <option value='2'> C </option>
                                                     <option value='3'> CN</option>
@@ -246,7 +259,7 @@ const Disconnector = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">Rated Voltage</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="number" placeholder="RatedVoltage" name="RatedVoltage" onChange={handleInputChange} />
+                                                <Form.Control type="number" placeholder="RatedVoltage" value={disconnector.ratedVoltage} name="ratedVoltage" onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -256,7 +269,7 @@ const Disconnector = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">Cost Per Unit</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="number" placeholder="costPerUnit" name="costPerUnit" onChange={handleInputChange} />
+                                                <Form.Control type="number" placeholder="costPerUnit" name="costPerUnit" value={disconnector.costPerUnit} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -266,7 +279,7 @@ const Disconnector = () => {
                                             <div className="col-sm-4">
                                                 <div className="form-check">
                                                     <label className="form-check-label">
-                                                        <input type="radio" className="form-check-input" name="IsUnderground" id="IsUnderground" value={true} defaultChecked onChange={handleInputChange} /> True
+                                                        <input type="radio" className="form-check-input" name="isUnderground" id="isUnderground" value={true} defaultChecked onChange={handleInputChange} /> True
                                                         <i className="input-helper"></i>
                                                     </label>
                                                 </div>
@@ -274,7 +287,7 @@ const Disconnector = () => {
                                             <div className="col-sm-5">
                                                 <div className="form-check">
                                                     <label className="form-check-label">
-                                                        <input type="radio" className="form-check-input" name="IsUnderground" id="IsUnderground" value={false} onChange={handleInputChange} /> False
+                                                        <input type="radio" className="form-check-input" name="isUnderground" id="isUnderground" value={false} onChange={handleInputChange} /> False
                                                         <i className="input-helper"></i>
                                                     </label>
                                                 </div>
@@ -287,7 +300,7 @@ const Disconnector = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label">Switch On Count</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="number" placeholder="SwitchOnCount" name="SwitchOnCount" onChange={handleInputChange} />
+                                                <Form.Control type="number" placeholder="SwitchOnCount" name="switchOnCount" value={disconnector.switchOnCount} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -297,7 +310,7 @@ const Disconnector = () => {
                                             <div className="col-sm-4">
                                                 <div className="form-check">
                                                     <label className="form-check-label">
-                                                        <input type="radio" className="form-check-input" name="Retained" id="Retained" value={true} defaultChecked onChange={handleInputChange} /> True
+                                                        <input type="radio" className="form-check-input" name="retained" id="retained" value={true} defaultChecked onChange={handleInputChange} /> True
                                                         <i className="input-helper"></i>
                                                     </label>
                                                 </div>
@@ -305,7 +318,7 @@ const Disconnector = () => {
                                             <div className="col-sm-5">
                                                 <div className="form-check">
                                                     <label className="form-check-label">
-                                                        <input type="radio" className="form-check-input" name="Retained" id="Retained" value={false} onChange={handleInputChange} /> False
+                                                        <input type="radio" className="form-check-input" name="retained" id="retained" value={false} onChange={handleInputChange} /> False
                                                         <i className="input-helper"></i>
                                                     </label>
                                                 </div>
@@ -318,7 +331,7 @@ const Disconnector = () => {
                                         <Form.Group className="row">
                                             <label className="col-sm-6 col-form-label" >Breaking Current</label>
                                             <div className="col-sm-9">
-                                                <Form.Control type="number" placeholder="ReactiveBreakingCurrent" name="ReactiveBreakingCurrent" onChange={handleInputChange} />
+                                                <Form.Control type="number" placeholder="reactiveBreakingCurrent" name="reactiveBreakingCurrent" value={disconnector.reactiveBreakingCurrent} onChange={handleInputChange} />
                                             </div>
                                         </Form.Group>
                                     </div>
@@ -328,7 +341,7 @@ const Disconnector = () => {
                                             <div className="col-sm-4">
                                                 <div className="form-check">
                                                     <label className="form-check-label">
-                                                        <input type="radio" className="form-check-input" name="NormalOpen" id="NormalOpen" value={true} defaultChecked onChange={handleInputChange} /> True
+                                                        <input type="radio" className="form-check-input" name="normalOpen" id="normalOpen" value={true} defaultChecked onChange={handleInputChange} /> True
                                                         <i className="input-helper"></i>
                                                     </label>
                                                 </div>
@@ -336,7 +349,7 @@ const Disconnector = () => {
                                             <div className="col-sm-5">
                                                 <div className="form-check">
                                                     <label className="form-check-label">
-                                                        <input type="radio" className="form-check-input" name="NormalOpen" id="NormalOpen" value={false} onChange={handleInputChange} /> False
+                                                        <input type="radio" className="form-check-input" name="normalOpen" id="normalOpen" value={false} onChange={handleInputChange} /> False
                                                         <i className="input-helper"></i>
                                                     </label>
                                                 </div>
@@ -349,7 +362,7 @@ const Disconnector = () => {
                                     </div>
                                     <div className="col-md-6">
                                         <div className="template-demo">
-                                            <button type="submit" disabled={!disconnector.mrId || !disconnector.name || !disconnector.description || (disconnector.costPerUnit < 0|| !disconnector.costPerUnit) || (disconnector.failureRate < 0|| !disconnector.failureRate) || (disconnector.RatedVoltage < 0|| !disconnector.RatedVoltage) || (disconnector.SwitchOnCount < 0|| !disconnector.SwitchOnCount) || (disconnector.ReactiveBreakingCurrent < 0|| !disconnector.ReactiveBreakingCurrent) }  className="btn btn-primary btn-icon-text" >
+                                            <button type="submit" disabled={!disconnector.mrid || !disconnector.name || !disconnector.description || (disconnector.costPerUnit < 0|| !disconnector.costPerUnit) || (disconnector.failureRate < 0|| !disconnector.failureRate) || (disconnector.ratedVoltage < 0|| !disconnector.ratedVoltage) || (disconnector.switchOnCount < 0|| !disconnector.switchOnCount) || (disconnector.reactiveBreakingCurrent < 0|| !disconnector.reactiveBreakingCurrent) }  className="btn btn-primary btn-icon-text" >
                                                 <i className="mdi mdi-file-check btn-icon-prepend"></i>
                                                 Submit
                                             </button>

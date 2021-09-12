@@ -36,7 +36,7 @@ export class TodoList extends Component {
 export const TodoListComponent = () => {
     const tasks = useSelector((state) => state.allIconLists.todos);
     const dispatch = useDispatch();
-    const [idCount,setIdCount] = useState(tasks.length);
+    //const [idCount,setIdCount] = useState(0);
     const [activeTask, setActive] = useState({
         id: 0,
         task: "Task can be added here",
@@ -70,8 +70,20 @@ export const TodoListComponent = () => {
     }
 
     const addTodoInput = () => {
-        activeTask.id = idCount;
-        setIdCount(idCount+1);
+        var max = 0;
+        if(tasks.length != 0)
+        {   
+            max = tasks[0].id;
+            tasks.forEach(element => {
+                if(max < element.id)
+                {
+                    max = element.id;
+                }
+            });
+            max = max + 1;
+        }
+        console.log(max);
+        activeTask.id = max;
         
         dispatch(addTodo(activeTask));
         setActive({

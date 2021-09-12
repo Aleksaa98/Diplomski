@@ -80,6 +80,7 @@ const Navbar = () => {
         <button className="navbar-toggler align-self-center" type="button" onClick={() => document.body.classList.toggle('sidebar-icon-only')}>
           <span className="mdi mdi-menu"></span>
         </button>
+        {/* <div className="col-sm-1"></div> */}
         <ul className="navbar-nav w-100">
           <div className="col-sm-1">
             <div className="form-check">
@@ -94,7 +95,7 @@ const Navbar = () => {
           <div className="col-sm-1">
             <div className="form-check">
               <label className="form-check-label">
-                <input type="radio" className="form-check-input" name="ExampleRadio4" value={!icon} checked={!icon} onChange={handleChangeBox}  /> USA
+                <input type="radio" className="form-check-input" name="ExampleRadio4" value={!icon} checked={!icon} onChange={handleChangeBox}  /> NA
                 <i className="input-helper"></i>
               </label>
             </div>

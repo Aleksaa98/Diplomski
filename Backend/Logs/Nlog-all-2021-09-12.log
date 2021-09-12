@@ -1,0 +1,14 @@
+2021-09-12 15:58:22.5224|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-12 15:58:22.5555|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-12 15:58:22.5593|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-12 15:58:42.2069|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-12 15:58:43.2780|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-09-12 17:58:54.8082|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-12 17:58:54.8082|ERROR|allfile|Something went wrong: Breaker with mrid='4213' or name='33' already exists, 409
+2021-09-12 18:07:29.7347|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-09-12 18:07:29.7347|ERROR|allfile|Something went wrong: Breaker with mrid='2mah' or name='412' already exists, 409
+2021-09-12 21:41:29.4559|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-12 21:41:29.4792|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-12 21:41:29.4826|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-12 21:41:44.3407|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-12 21:41:45.3382|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'

@@ -24,3 +24,8 @@
 2021-09-11 17:41:37.2895|ERROR|allfile|Something went wrong: Disconnector with mrid='423' or name='423' already exists, 409
 2021-09-11 17:42:32.4721|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
 2021-09-11 17:42:32.4721|ERROR|allfile|Something went wrong: Disconnector with mrid='423' or name='4234' already exists, 409
+2021-09-11 19:54:53.2828|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-09-11 19:54:53.3129|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-09-11 19:54:53.3129|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Aleksa\Desktop\Diplomski2\Backend\Web
+2021-09-11 19:55:07.4444|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2021-09-11 19:55:08.3795|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
